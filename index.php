@@ -33,10 +33,10 @@
                   Profile
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Edit profile</a></li>
-                  <li><a class="dropdown-item" href="#">Notification</a></li>
+                  <li><a class="dropdown-item" href="#">Edit profile <i class="bi bi-pencil-square px-3"></i></a></li>
+                  <li><a class="dropdown-item" href="#">Notification <i class="bi bi-bell px-2"></i></a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Log out</a></li>
+                  <li><a class="dropdown-item" href="#">Log out <i class="bi bi-box-arrow-right px-3"></i></a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -69,9 +69,6 @@
         </div>
     </nav>
 </header>
-
-
-  
 
 
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
