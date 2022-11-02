@@ -1,1 +1,103 @@
 
+  /* ------------------------------------Start header---------------------------------- */
+  #navbar ul {
+    display: flex; /*to remove the dote from the li*/
+    list-style: none;
+  }
+  #header {
+    height: 73px; 
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  }
+  
+  #header.header-transparent {
+    background: transparent;   /*to make the background transparent for the header*/
+  }
+  
+  #navbar li a {
+   position: relative;
+   color:white ;/*the color of the text in nav*/
+  }
+  
+  #navbar a,
+  #navbar a:focus {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 10px 30px;
+    font-size: 15px;
+    font-weight: 500; /*the bold of the text in nav */
+    font-family: "Poppins", sans-serif;
+  }
+  #navbar img{
+    height: 75px;
+    width: 75px;
+  }
+  
+  #navbar .line:before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 2px;
+    bottom: 2px;
+    left: 40px;
+    /* background-color: #1acc8d; */
+    background-color: 	#0818A8;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+  #navbar a:hover:before,
+  #navbar li:hover>a:before,
+  #navbar .active:before {
+    visibility: visible; /*the line under nav list visible*/
+    width: 25px;
+  }
+  
+  #navbar a:hover,
+  #navbar .active,
+  #navbar .active:focus,
+  #navbar li:hover>a {
+    color:#0818A8;
+    text-decoration: none;/*remove the underline of the nav list*/
+  }
+  
+  
+  #navbar .dropdown ul { /*dropdown in appointment and educator in nav*/
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 0;
+    opacity: 0;
+    visibility: hidden;
+    /* background: #fff; */
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    transition: 0.3s;
+    border-radius: 8px;
+  }
+  
+  #navbar .dropdown ul li {
+    min-width: 200px;
+  }
+  
+  #navbar .dropdown ul a {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: none;
+    color:white;
+  }
+  #navbar .dropdown ul a:hover,
+#navbar .dropdown ul .active:hover,
+#navbar .dropdown ul li:hover>a {
+  color: #0818A8;
+  
+}
+  #navbar .dropdown:hover>ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+  /* ------------------------------------End header--------------------------------------- */
+  
