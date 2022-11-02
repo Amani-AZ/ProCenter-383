@@ -19,11 +19,11 @@
 <header id="header" class="fixed-top "> <!-- header-transparent -->
     <nav id="navbar" class="navbar navbar-expand-lg ">
         <div class="container-fluid">
-          <a class="navbar-brand justify-content-start" href="#"><img src="Pictures/logo.png" alt="ProCenter logo" class="img-fluid "></a>
+          <a class="navbar-brand justify-content-start pt-5" href="#"><img src="Pictures/logo whight text.png" alt="ProCenter logo" class="img-fluid "></a>
           <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon "></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse justify-content-end pt-3" id="navbarSupportedContent">
             <ul class="navbar-nav ">
               <li class="nav-item ">
                 <a class="nav-link line" aria-current="page" href="#">Home</a><!--justify-content-end-->
