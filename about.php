@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- <link href="style.css" rel="stylesheet"> -->
-  <link href="style 1.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <script src="main.js"></script>
     
 </head>
@@ -21,10 +21,10 @@
 
 
 <!--------------------------------Start Header---------------------------------------->
- <header id="header" class="fixed-top bg"> 
+<header id="header" > 
     <nav id="navbar" class="navbar navbar-expand-lg  ">
-        <div class="container-fluid">
-          <a class="navbar-brand  pt-5" href="#"><img src="Pictures/logo whight text.png" alt="ProCenter logo" class="img-fluid "></a>
+        <div class="container-fluid pt-2">
+          <a class="navbar-brand  " href="#"><img src="Pictures/Logo-clear.png" alt="ProCenter logo" class="img-fluid "></a>
           <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon "></span>
           </button>
@@ -44,6 +44,7 @@
                   <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right px-3"></i>Log out </a></li>
                 </ul>
               </li>
+              
               <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Educator
@@ -66,18 +67,27 @@
                 <a class="nav-link line" href="#">Workshop</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link line" href="#">About</a>
+                <a class="nav-link line" href="about.php">About</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link line" href="#">contact</a>
               </li>
+              <!-- <li class="nav-item dropdown">
+              <img class="h-100 w-100 px-5 dropdown-toggle line" src="Pictures/icons8-verified-account-64.png" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              </img>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square px-3"></i>Edit profile </a></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-bell px-3"></i> Notification </a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right px-3"></i>Log out </a></li>
+                </ul>
+              </li> -->
             </ul>
           
         </div>
         </div>
     </nav>
 </header> 
-
 
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
 

@@ -1,15 +1,20 @@
 
   /* ------------------------------------Start header---------------------------------- */
   
-  
+  #header{
+    background-color: white;
+    color:#01036f;
+    height: 70px;
+  }
   #navbar ul {
     display: flex; /*to remove the dote from the li*/
     list-style: none;
+    
   }
   
   #navbar li a {
    position: relative;
-   color:rgba(255, 255, 255, 0.7);/*the color of the text in nav*/
+  /*the color of the text in nav*/
   }
   
   #navbar a,
@@ -20,6 +25,7 @@
     font-size: 15px;
     font-weight: 500; /*the bold of the text in nav */
     font-family: "Poppins", sans-serif;
+    color:#01036f;
   }
   #navbar img{
     height:85px;
@@ -53,7 +59,7 @@
   #navbar .active,
   #navbar .active:focus,
   #navbar li:hover>a {
-    color:white;
+    color:#4545e8;
     text-decoration: none;/*remove the underline of the nav list*/
   }
   
@@ -194,7 +200,7 @@
 #hero {
  
     position: relative;
-    padding: 170px 100px 120px 0;/*top left buttom right*/
+    padding: 130px 100px 120px 0;/*top left buttom right*/
     
   }
   #hero .font{
@@ -214,6 +220,7 @@
   #hero .mg{
       max-width: 100% !important;
       max-height: 100% !important;
+      
   }
   
   a:hover, a:visited, a:link, a:active
@@ -292,7 +299,11 @@
    #educator .padding-top{
     padding-top: 150px;
    }
-
+   #educator .card{
+    border-color: #FF3CAC;
+    
+   }
+  
    .box-shadow{
     -webkit-box-shadow: 0 1px 1px rgba(72,78,85,.6);
     box-shadow: 0 1px 1px rgba(72,78,85,.6);
@@ -301,9 +312,6 @@
     -ms-transition: all .2s ease-out;
     -o-transition: all .2s ease-out;
     transition: all .2s ease-out;
-    border: 5px solid #dd2476;
-
-  
   }
   
   .box-shadow:hover{

@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- <link href="style.css" rel="stylesheet"> -->
-  <link href="style 1.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <script src="main.js"></script>
     
 </head>
@@ -91,7 +91,7 @@
     <div class="row text-center justify-content-center p-5">
         <div class="col-md-3 card m-3 box-shadow" style="width:250px">
           <div class="card-body ">
-              <h2 class="card-title pt-4">Freelancer License</h2>
+              <h2 class="card-title pt-4">Ms. Aizal</h2>
               <p class="card-text">For developers who only require the theme HTML/CSS files</p>
               <h2 class="pb-4">$29</h2>
               <button type="button" class="btn btn-danger p-3 w-100">Buy Now</button>
@@ -106,9 +106,9 @@
         </div>
         <div class="col-md-3 card m-3 box-shadow" style="width:250px">
           <div class="card-body">
-              <h2 class="card-title pt-4">Developer License</h2>
-              <p class="card-text">For developers who only require the theme HTML/CSS files</p>
-              <h2 class="pb-4">$49</h2>
+              <h2 class="card-title pt-4">Dr. Khajel</h2>
+              <!-- <p class="card-text">For developers who only require the theme HTML/CSS files</p> -->
+              <h2 class="pb-4">Time:</h2>
               <button type="button" class="btn btn-danger p-3 w-100">Buy Now</button>
               <div class="h6">
               <p class="pt-5">1 Domain</p><hr>
@@ -122,7 +122,7 @@
         </div>
         <div class="col-md-3 card m-3 box-shadow" style="width:250px">
           <div class="card-body">
-              <h2 class="card-title pt-4">StartUp License</h2>
+              <h2 class="card-title pt-4">Dr. Manal</h2>
               <p class="card-text">For small teams creating products that require end users to pay</p>
               <h2 class="pb-4">$149</h2>
               <button type="button" class="btn btn-danger p-3 w-100">Buy Now</button>
@@ -137,9 +137,9 @@
         </div>
         <div class="col-md-3 card m-3 box-shadow " style="width:250px">
           <div class="card-body">
-              <h2 class="card-title pt-4">Enterprise License</h2>
-              <p class="card-text">For small teams creating products that require end users to pay</p>
-              <h2 class="pb-4">$499</h2>
+              <h2 class="card-title pt-4">Ms. City</h2>
+              <!-- <p class="card-text">Cs383</p> -->
+              <h3 class="pb-4">$Cs383</h3>
               <button type="button" class="btn btn-danger p-3 w-100">Buy Now</button>
               <div class="h6">
               <p class="pt-5">1 Domain</p><hr>

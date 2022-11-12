@@ -22,10 +22,10 @@
 
 <!--------------------------------Start Header---------------------------------------->
 
- <header id="header" class="fixed-top bg"> 
+ <header id="header" > 
     <nav id="navbar" class="navbar navbar-expand-lg  ">
-        <div class="container-fluid">
-          <a class="navbar-brand  pt-5" href="#"><img src="Pictures/logo whight text.png" alt="ProCenter logo" class="img-fluid "></a>
+        <div class="container-fluid pt-2">
+          <a class="navbar-brand  " href="#"><img src="Pictures/Logo-clear.png" alt="ProCenter logo" class="img-fluid "></a>
           <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon "></span>
           </button>
@@ -45,6 +45,7 @@
                   <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right px-3"></i>Log out </a></li>
                 </ul>
               </li>
+              
               <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Educator
@@ -67,11 +68,21 @@
                 <a class="nav-link line" href="#">Workshop</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link line" href="#">About</a>
+                <a class="nav-link line" href="about.php">About</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link line" href="#">contact</a>
               </li>
+              <!-- <li class="nav-item dropdown">
+              <img class="h-100 w-100 px-5 dropdown-toggle line" src="Pictures/icons8-verified-account-64.png" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              </img>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square px-3"></i>Edit profile </a></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-bell px-3"></i> Notification </a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right px-3"></i>Log out </a></li>
+                </ul>
+              </li> -->
             </ul>
           
         </div>
@@ -86,9 +97,9 @@
 <section id="hero">
     <div class="container-fluid ">
       <div class="row justify-content-between text-white">
-        <div class="col-lg-7 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+        <div class="col-lg-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-          <h1 class="font anime ">
+          <h1 class="font">
             Find your<br />
             best <b class="text-warning">Educator</b> & Book a session
           </h1>
@@ -98,7 +109,7 @@
           </div>
         </div>
         
-        <div class="col-lg-4 order-1 order-lg-2 " data-aos="zoom-out" data-aos-delay="300">
+        <div class="col-lg-6 order-1 order-lg-2 " data-aos="zoom-out" data-aos-delay="300">
           <img src="Pictures/bro.png" class="img-fluid mg " alt="ProCenter image">
         </div>
       </div>
