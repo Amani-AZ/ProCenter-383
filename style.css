@@ -4,7 +4,7 @@
   #header{
     background-color: white;
     color:#01036f;
-    height: 70px;
+    /* height: 70px; */
   }
   #navbar ul {
     display: flex; /*to remove the dote from the li*/
