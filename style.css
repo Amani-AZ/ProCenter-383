@@ -342,3 +342,70 @@
   margin: -30px -30px 15px -30px;
   position: relative;
 }
+/*  ===================== CSS for Tables ==========================*/
+.schedule{
+  margin-top: 5%;
+}
+.panel{
+  background: linear-gradient(to right , #784BA0, #FF3CAC);
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 0 5px rgba(0,0,0,0.05),0 0 0 10px rgba(0,0,0,0.05);
+}
+.panel .panel-heading .title{
+  padding-left: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+.panel .panel-body .table thead tr th{
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  /* padding: 12px; */
+  padding: 10px 5px 12px 15px;
+  border: none;
+}
+.panel .panel-body .table .stuName{
+  padding-right: 30px;
+}
+.panel .panel-body .table .book{
+  padding-left: 20px;
+}
+.panel .panel-body .table .cancel{
+  padding-left: 30px;
+}
+/* .panel .panel-body .table .table-hover tbody tr:hover td {
+  background-color: #fff;
+} */
+.panel .panel-body .table tbody tr td{
+  color: #fff;
+  font-size: 15px;
+  padding: 10px 13px 12px 15px;
+  vertical-align: middle;
+  border: none;
+  width: 90px;
+}
+.panel .panel-body .table tbody .action-list{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.panel .panel-body .table tbody .action-list li a{
+  color: #fff;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease 0s;
+}
+.panel .panel-body .table tbody a{
+  color: #fff;
+  font-size: 15px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease 0s;
+  padding-right: 15px;
+  padding-left:6px;
+}
+
