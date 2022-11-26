@@ -10,7 +10,7 @@
           <div class="collapse navbar-collapse justify-content-end pt-3" id="navbarSupportedContent">
             <ul class="navbar-nav ">
               <li class="nav-item ">
-                <a class="nav-link line" aria-current="page" href="#">Home</a><!--justify-content-end-->
+                <a class="nav-link line" aria-current="page" href="index.php">Home</a><!--justify-content-end-->
               </li>
               <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,7 +29,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Find an educator</a></li>
-                  <li><a class="dropdown-item" href="#">Be an educator</a></li>
+                  <li><a class="dropdown-item" href="be_educator.php">Be an educator</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -45,7 +45,7 @@
                 <a class="nav-link line" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link line" href="#">contact</a>
+                <a class="nav-link line" href="contact.php">contact</a>
               </li>
             </ul>
           

@@ -8,17 +8,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- <link href="style.css" rel="stylesheet"> -->
-  <link href="style.css" rel="stylesheet">
-  <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <link href="style.css" rel="stylesheet"> -->
+    <link href="style.css" rel="stylesheet">
+    <script src="main.js"></script>
+    <script>
+      function redirectBeEdu(){
+        window.location ="be_educator.php";
+      }
+      function redirectFindEdu(){
+        window.location  = "find_an_educator.php";
+      }
+    </script>
     
 </head>
 <body>
-
+<?php 
+    session_start();
+    if (!isset($_SESSION['college_id']))
+    header("Location: login.php");
+   ?>
 
 <!--------------------------------Start Header---------------------------------------->
 
@@ -32,7 +44,7 @@
           <div class="collapse navbar-collapse justify-content-end  " id="navbarSupportedContent">
             <ul class="navbar-nav mr-sm-2 ">
               <li class="nav-item ">
-                <a class="nav-link line" aria-current="page" href="#">Home</a>
+                <a class="nav-link line" aria-current="page" href="index.php">Home</a>
               </li>
               <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +64,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Find an educator</a></li>
-                  <li><a class="dropdown-item" href="#">Be an educator</a></li>
+                  <li><a class="dropdown-item" href="be_educator.php">Be an educator</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -65,13 +77,13 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link line" href="#">Workshop</a>
+                <a class="nav-link line" href="workshop.php">Workshop</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link line" href="about.php">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link line" href="#">contact</a>
+                <a class="nav-link line" href="contact.php">contact</a>
               </li>
               <!-- <li class="nav-item dropdown">
               <img class="h-100 w-100 px-5 dropdown-toggle line" src="Pictures/icons8-verified-account-64.png" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,8 +116,8 @@
             best <b class="text-warning">Educator</b> & Book a session
           </h1>
             <h5>You can improve your performance by booking a session at the programming center!</h5>
-            <button type="button" class="btn  btn-change border border-dark rounded-pill l shadow-lg  ">Find an Educator</button>
-            <button type="button" class="btn  btn-change border border-light rounded-pill m shadow-lg">Be an Educator</button>
+            <button onclick="redirectFindEdu()" class="btn  btn-change border border-dark rounded-pill l shadow-lg  ">Find an Educator</button>
+            <button onclick="redirectBeEdu()" class="btn  btn-change border border-light rounded-pill m shadow-lg">Be an Educator</button>
           </div>
         </div>
         
@@ -331,6 +343,5 @@
     </div>
   </footer>
   <!------------------------------------------End footer---------------------------------->
-
 </body>
 <html>
