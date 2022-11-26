@@ -11,7 +11,25 @@
 
 </head>
 <body>
-
+<?php 
+session_start();
+if (!isset($_SESSION['college_id']))
+header("Location: login.php");
+?>
+ <!-- ----------------------------------------------------header part------------------------------------------------------ -->
+ <?php include("login_db.php");
+    // if( $_SESSION["user_type"] == 'student') {
+    //      include ("student_header.php");
+    //   } 
+    // else if($_SESSION["user_type"] == 'admin') {
+    //      include ("admin_header.php");
+    //   }
+    // else if ($_SESSION["user_type"] == 'educator')
+    // {
+    //     include ("educator_header.php");
+    // }
+    ?>
+  <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
  <!--  ========================== Start of Contact Section  ========================== -->
 <section id="contact">
   <div class="container-fluid" data-aos="fade-up">
@@ -29,27 +47,49 @@
         </div>
 
         <div class=" my-2 ">
-          <form method="post" >
+        <?php 
+        include 'db_con.php';  
+        $query = "select * from contact";  
+        mysqli_query($conn,$query); 
+        if(isset($_POST['submit']))
+        {
+            $fname=$_POST['first'];
+            $lname=$_POST['last'];
+            $id=$_POST['id'];
+            $subject=$_POST['subject'];
+            $message=$_POST['message'];
+            $sql="insert into contact(fname,lname,id,subject,message) values('$fname','$lname','$id','$subject','$message')";
+            if( mysqli_query($conn,$sql)){
+              echo "<script>alert('Your message has been sent.');</script>";
+            }
+            else
+            {
+              echo "<script>alert('Could not send the message!');</script>";
+            }
+            
+        }
+        ?>
+          <form action="" method="post" >
             <div class="row">
               <div class="form-group col-lg-4">
-                <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" required>
+                <input type="text" name="first" class="form-control" placeholder="First Name" required>
               </div>
               <div class="form-group col-lg-4">
-                <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" required>
+                <input type="text" name="last" class="form-control" placeholder="Last Name" required>
               </div>
               <div class="form-group col-lg-4">
-                <input type="text" name="id" class="form-control" id="id" placeholder="ID" required>
+                <input type="text" name="id" class="form-control"  placeholder="ID" required>
               </div>
               
             </div>
             <div class="form-group mt-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required>
             </div>
             <div class="form-group mt-3">
               <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
             </div>
             <div class="d-grid">
-              <button type="submit" type="button" class=" btn btn-primary btn-lg btn-block rounded-5 my-3" style=" background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);">Send Message</button>
+              <button type="submit" name="submit" class=" btn btn-primary btn-lg btn-block rounded-5 my-3" style=" background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);">Send Message</button>
             </div>
          </form>
         </div>

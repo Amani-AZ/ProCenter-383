@@ -12,13 +12,13 @@
     .btn-primary{
     background-color: #FF3CAC;
     background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);
-  }
-  i{
-    color: #0277ff
-  }
-  .bb{
-    border: 2px  solid #0277ff;
-  }
+    }
+    i{
+      color: #0277ff
+    }
+    .bb{
+      border: 2px  solid #0277ff;
+    }
     </style>
 </head>
 <body class="bg-light">
@@ -26,7 +26,7 @@
 include "login_db.php";
 ?>
   <header>
-    <a href="/login.html"><img src="Pictures/Logo-clear.png" alt="ProCenter Logo" width="100" height="100"></a>
+    <a href="/login.php"><img src="Pictures/Logo-clear.png" alt="ProCenter Logo" width="100" height="100"></a>
   </header>
     <section class="vh-100 mt-0">
         <div class="container h-100">
@@ -43,7 +43,7 @@ include "login_db.php";
                 <div class="form-outline mb-4">
                     <div class="row">
                        <div class="col-1 mt-2"> <i class="fa fa-user w3-xlarge " ></i></div>
-                       <input type="text" id="form1Example13" name="college_id" class="form-control form-control-lg col" placeholder="Enter id" /> 
+                       <input type="text" name="college_id" class="form-control form-control-lg col" placeholder="Enter id" /> 
                     </div>
                 </div>
       
@@ -51,7 +51,7 @@ include "login_db.php";
                 <div class="form-outline mb-4">
                     <div class="row">
                       <div class="col-1 mt-2"> <i class="w3-xlarge fa fa-lock "></i></div>
-                        <input type="password" id="form1Example23"name="password" class="form-control form-control-lg col" placeholder="Enter Password" />
+                        <input type="password"  name="password" class="form-control form-control-lg col" placeholder="Enter Password" />
                     </div>
                 </div>
       
@@ -59,7 +59,7 @@ include "login_db.php";
                   <a href="#!">Forgot password?</a>
                 </div>
                 <div class="d-grid">
-                    <input name="sub" type="submit" class=" btn btn-primary btn-lg btn-block border-0" >Log in</input>
+                    <button name="sub" type="submit" class=" btn btn-primary btn-lg btn-block border-0" >Log in</button>
                 </div>
               </form>
             </div>

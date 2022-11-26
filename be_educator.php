@@ -9,6 +9,27 @@
     <link href="/assets/js/aos.css" rel="stylesheet">
   </head>
 <body>
+<?php 
+    session_start();
+    if (!isset($_SESSION['college_id']))
+    header("Location: login.php");
+?>
+<!-- ----------------------------------------------------header part------------------------------------------------------ -->
+<?php 
+    include "login_db.php";
+    // if( $_SESSION["user_type"] == 'student') {
+    //      include ("student_header.php");
+    //   } 
+    // else if($_SESSION["user_type"] == 'admin') {
+    //      include ("admin_header.php");
+    //   }
+    // else if ($_SESSION["user_type"] == 'educator')
+    // {
+    //     include ("educator_header.php");
+    // }
+?>
+<!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
+
 <!-- =======Start of about the Volunteer Students======= -->
 <section  style=" background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);">
   <div class="container" data-aos="fade-up">
@@ -28,6 +49,7 @@
 </section>
 <!-- =======End of about the Volunteer Students======= -->
 <!-- ======= Start of Request to be Volunteer ======= -->
+
 <section class="p-4 my-4 ">
 <div class="container-fluid" data-aos="fade-up">
   <div class="text-center">
@@ -35,56 +57,83 @@
     <p class="lead">Registration Form</p>
   </div>
 
-  <div class="row" >
-  <div class="col-lg-5 offset-lg-1 mb-4" >
-      <div >
-      <form  method="post"> 
-      <div class="row my-5">
-            <div class="col-md-4 my-md-3">
-              <label for="fname" class="form-label">First Name</label>
-              <input type="text" class="form-control" id="fname">
-            </div>
-            <div class="col-md-4 my-md-3">
-              <label for="lname" class="form-label">Last Name</label>
-              <input type="text" class="form-control" id="lname">
-            </div>
-            <div class="col-md-4 my-md-3">
-              <label for="id" class="form-label">id number</label>
-              <input type="text" class="form-control" id="id">
-            </div>
-            <div class="col-md-3 my-md-3">
-              <label for="GPA" class="form-label">GPA</label>
-              <input type="text" class="form-control" id="GPA" placeholder="GPA" >
-            </div>
-            <div class="col-md-5 my-md-3">
-              <label for="Level" class="form-label">Level</label>
-              <select id="Level" class="form-select">
-                <option value="1">First-Year</option>
-                <option value="2">Sophomore</option>
-                <option value="3">Junior</option>
-                <option value="3">Senior</option>
-              </select>
-            </div>
-            <div class="col-md-4 my-md-3">
-              <label for="Course" class="form-label">Course</label>
-              <input type="text" class="form-control" id="Course">
-            </div>
-      </div>
-      </div>
-      <div class="d-grid">
-          <button type="submit" type="button" class=" btn btn-primary btn-lg btn-block rounded-5 " style=" background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);">Send the Request</button>
-      </div>
-      </form>
+<div class="row" >
+<div class="col-lg-5 offset-lg-1 mb-4" >
+
+<div>
+<div >
+<?php 
+ include 'db_con.php';  
+ $query = "select * from requests";  
+ mysqli_query($conn,$query); 
+ if(isset($_POST['submit']))
+ {
+     $fname=$_POST['FN'];
+     $lname=$_POST['LN'];
+     $id=$_POST['ID'];
+     $level=$_POST['level'];
+     $subject=$_POST['subject'];
+     $GPA=$_POST['GPA'];
+     $sql="insert into requests(fname,lname,id,subject,level,GPA) values('$fname','$lname','$id','$subject','$level','$GPA')";
+     if( mysqli_query($conn,$sql)){
+       echo "<script>alert('Your Request has been sent.');</script>";
+     }
+     else
+     {
+        echo "<script>alert('Could not send the Request!');</script>";
+     }
+ }
+?>
+  <form action="" method="post" class="row my-5"> 
+              <div class="col-md-4 my-md-3">
+                <label for="FN" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="FN" required>
+              </div>
+              <div class="col-md-4 my-md-3">
+                <label for="LN" class="form-label" >Last Name</label>
+                <input type="text" class="form-control" name="LN" required>
+              </div>
+              <div class="col-md-4 my-md-3">
+                <label for="ID" class="form-label" >id number</label>
+                <input type="number" class="form-control" name="ID" required>
+              </div>
+              <div class="col-md-3 my-md-3">
+                <label for="GPA" class="form-label">GPA</label>
+                <input type="text" class="form-control" name="GPA"  placeholder="GPA" required>
+              </div>
+              <div class="col-md-5 my-md-3">
+                <label for="level" class="form-label" >Level</label>
+                <select  class="form-select" name="level" required>
+                <option disabled selected hidden>Select Your level</option>
+                  <option>First-Year</option>
+                  <option>Sophomore</option>
+                  <option>Junior</option>
+                  <option>Senior</option>
+                </select>
+              </div>
+              <div class="col-md-4 my-md-3">
+                <label for="subject"  class="form-label" >Subject</label>
+                <input type="text" class="form-control" name="subject"  required>
+              </div>
+              <div class="d-grid">
+                <button type="submit" name="submit"  class="my-4 btn btn-primary btn-lg btn-block rounded-5 " style=" background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);">Send the Request</button>
+              </div>
+        </div>
+  </form>
+      
+</div>
+      
   </div>
   <div class="col-lg-4 offset-lg-1">
     <div class="map mb-4 mb-lg-0">
       <img src="Pictures/Raising hand.svg" alt="Volunteer raising hand">
     </div>
   </div>
-  </div>
+
+ </div>
 </div>
 </section>
-  <!-- ======= End of Request to be Volunteer ======= -->
+<!-- ======= End of Request to be Volunteer ======= -->
 <!-- ========================== Start Of javaScript files  ========================== -->
 <script src="/assets/js/aos.js"></script>
 <script src="/assets/js/aos.js"></script>

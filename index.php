@@ -12,13 +12,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- <link href="style.css" rel="stylesheet"> -->
-  <link href="style.css" rel="stylesheet">
-  <script src="main.js"></script>
+    <!-- <link href="style.css" rel="stylesheet"> -->
+    <link href="style.css" rel="stylesheet">
+    <script src="main.js"></script>
+    <script>
+      function redirectBeEdu(){
+        window.location ="be_educator.php";
+      }
+      function redirectFindEdu(){
+        window.location  = "find_an_educator.php";
+      }
+    </script>
     
 </head>
 <body>
-
+<?php 
+    session_start();
+    if (!isset($_SESSION['college_id']))
+    header("Location: login.php");
+   ?>
 
 <!--------------------------------Start Header---------------------------------------->
 
@@ -104,8 +116,8 @@
             best <b class="text-warning">Educator</b> & Book a session
           </h1>
             <h5>You can improve your performance by booking a session at the programming center!</h5>
-            <button type="button" class="btn  btn-change border border-dark rounded-pill l shadow-lg  ">Find an Educator</button>
-            <button type="button" class="btn  btn-change border border-light rounded-pill m shadow-lg">Be an Educator</button>
+            <button onclick="redirectFindEdu()" class="btn  btn-change border border-dark rounded-pill l shadow-lg  ">Find an Educator</button>
+            <button onclick="redirectBeEdu()" class="btn  btn-change border border-light rounded-pill m shadow-lg">Be an Educator</button>
           </div>
         </div>
         
@@ -331,6 +343,5 @@
     </div>
   </footer>
   <!------------------------------------------End footer---------------------------------->
-
 </body>
 <html>
