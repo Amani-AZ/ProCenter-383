@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- <link href="style.css" rel="stylesheet"> -->
-  <link href="style.css" rel="stylesheet">
+  <link href="style 4.css" rel="stylesheet">
   <script src="main.js"></script>
     
 </head>
@@ -101,9 +101,9 @@
                         <div ><img class="img-fluid rounded-circle" src="Pictures/Presentation-amico.png" alt="..." /></div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
-                        <div >
-                        <h2 class="display-3 color pb-3 text-center"><b>About Us</b></h2>
-                            <p >CSE ProCenter provides a variety of services for the computer science and engineering department at Yanbu university college.</p>
+                        <div class="colorful-bg p-5 rounded-circle">
+                        <h2 class="display-3 color text-center pt-5"><b>About Us</b></h2>
+                            <p class="p-5">CSE ProCenter provides a variety of services for the computer science and engineering department at Yanbu university college.</p>
                             
                         </div>
                     </div>
