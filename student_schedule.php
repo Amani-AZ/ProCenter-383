@@ -118,56 +118,35 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>
-                                    <td class="book">
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="book"><i class="fa-solid fa-calendar-plus"></i></a></li>
-                                        </ul>
-                                    </td>                               
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>
-                                    <td class="book">
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="book"><i class="fa-solid fa-calendar-plus"></i></a></li>
-                                        </ul>
-                                    </td>                                
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>
-                                    <td class="book">
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="book"><i class="fa-solid fa-calendar-plus"></i></a></li>
-                                        </ul>
-                                    </td>                                
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>
-                                    <td class="book">
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="book"><i class="fa-solid fa-calendar-plus"></i></a></li>
-                                        </ul>
-                                    </td>                                
-                                </tr>
-                                    </tbody>
-                                </table>
+                            <tr>
+                              <?php 
+                              include "login_db.php";
+                              ?>
+                              <?php   
+                              include 'db_con.php';
+                              $query="select * from eduschedule"; // Fetch all the data 
+                              $result1 = mysqli_query($conn, $query);
+                              
+                                $i=1;  
+                                
+                                  while ($result = mysqli_fetch_assoc($result1)) {  
+                                      echo "  
+                                            <tr class='data'>   
+                                            <td>".$i++."</td>
+                                            <td>".$result['edu_name']."</td> 
+                                            <td>".$result['course']."</td>  
+                                            <td>".$result['date']."</td>  
+                                            <td>".$result['time']."</td> 
+                                            <td class='book'>
+                                              <ul class='action-list'>
+                                                <li><a href='db_book.php?stuid=".$_SESSION['college_id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' data-tip='book'> <i class='fa-solid fa-calendar-plus'></i> </a></li>
+                                              </ul></td> 
+                                            </tr>  
+                                          ";  
+                                  }              
+                               ?>
+                            </tbody>
+                        </table>
                             </div>
                         </div>
                     </div>
