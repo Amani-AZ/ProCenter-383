@@ -7,6 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- CSS Files -->
     <link href="/assets/js/aos.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="style 1.css" rel="stylesheet">
+    <script src="main.js"></script>
   </head>
 <body>
 <?php 
@@ -17,16 +27,16 @@
 <!-- ----------------------------------------------------header part------------------------------------------------------ -->
 <?php 
     include "login_db.php";
-    // if( $_SESSION["user_type"] == 'student') {
-    //      include ("student_header.php");
-    //   } 
-    // else if($_SESSION["user_type"] == 'admin') {
-    //      include ("admin_header.php");
-    //   }
-    // else if ($_SESSION["user_type"] == 'educator')
-    // {
-    //     include ("educator_header.php");
-    // }
+    if( $_SESSION["user_type"] == 'student') {
+         include ("student_header.php");
+      } 
+    else if($_SESSION["user_type"] == 'admin') {
+         include ("admin_header.php");
+      }
+    else if ($_SESSION["user_type"] == 'educator')
+    {
+        include ("educator_header.php");
+    }
 ?>
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
 
@@ -133,6 +143,8 @@
  </div>
 </div>
 </section>
+
+<?php include("footer.php");?>
 <!-- ======= End of Request to be Volunteer ======= -->
 <!-- ========================== Start Of javaScript files  ========================== -->
 <script src="/assets/js/aos.js"></script>

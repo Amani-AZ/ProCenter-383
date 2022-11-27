@@ -19,80 +19,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="style.css" rel="stylesheet">
+    <link href="style 1.css" rel="stylesheet">
 
   </head>
   <body>
+  <?php 
+    session_start();
+    if (!isset($_SESSION['college_id']))
+    header("Location: login.php");
+   ?>
 
-       <!--------------------------------Start Header---------------------------------------->
-
- <header id="header" > 
-    <nav id="navbar" class="navbar navbar-expand-lg  ">
-        <div class="container-fluid pt-2">
-          <a class="navbar-brand  " href="#"><img src="Pictures/Logo-clear.png" alt="ProCenter logo" class="img-fluid "></a>
-          <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end  " id="navbarSupportedContent">
-            <ul class="navbar-nav mr-sm-2 ">
-              <li class="nav-item ">
-                <a class="nav-link line" aria-current="page" href="index.php">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Profile
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square px-3"></i>Edit profile </a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-bell px-3"></i> Notification </a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right px-3"></i>Log out </a></li>
-                </ul>
-              </li>
-              
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Educator
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Find an educator</a></li>
-                  <li><a class="dropdown-item" href="be_educator.php">Be an educator</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle  line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Appointment
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item " href="#">My Appointment</a></li>
-                  <li><a class="dropdown-item " href="#">My materials</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link line" href="workshop.php">Workshop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link line" href="about.php">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link line" href="contact.php">contact</a>
-              </li>
-              <!-- <li class="nav-item dropdown">
-              <img class="h-100 w-100 px-5 dropdown-toggle line" src="Pictures/icons8-verified-account-64.png" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              </img>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square px-3"></i>Edit profile </a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-bell px-3"></i> Notification </a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right px-3"></i>Log out </a></li>
-                </ul>
-              </li> -->
-            </ul>
-          
-        </div>
-        </div>
-    </nav>
-</header> 
+<!--------------------------------Start Header---------------------------------------->
+<?php include("login_db.php");
+    if( $_SESSION["user_type"] == 'student') {
+         include ("student_header.php");
+      } 
+    else if($_SESSION["user_type"] == 'admin') {
+         include ("admin_header.php");
+      }
+    else if ($_SESSION["user_type"] == 'educator')
+    {
+        include ("educator_header.php");
+    }
+    ?>
+ 
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
     <div class="schedule container p-5">
         <div class="row">
@@ -175,6 +125,7 @@
             </div>
         </div>
     </div>
+    <?php include("footer.php");?>
        
     </body>
 </html>

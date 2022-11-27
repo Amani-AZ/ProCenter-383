@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="style.css" rel="stylesheet">
+    <link href="style 1.css" rel="stylesheet">
 <body>
 <?php 
     session_start();
@@ -93,7 +93,8 @@
   
  <!-- ----------------------------------------------End of Requests part------------------------------------------------------ -->
 
-<!--  ------------------------------------------------ footer part part------------------------------------------------------ -->
+<!--  ------------------------------------------------ footer part ------------------------------------------------------ -->
+<?php include("footer.php");?>
 <!--  ---------------------------------------------- End of footer part part------------------------------------------------------ -->
 </body>
 </html> 

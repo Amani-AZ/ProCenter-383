@@ -4,123 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <!-- <link href="style.css" rel="stylesheet"> -->
-  <link href="style 4.css" rel="stylesheet">
-  <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="style 1.css" rel="stylesheet">
+    <script src="main.js"></script>
     
 </head>
 <body>
 
 
 <!--------------------------------Start Header---------------------------------------->
-<header id="header" > 
-    <nav id="navbar" class="navbar navbar-expand-lg  ">
-        <div class="container-fluid pt-2">
-          <a class="navbar-brand  " href="#"><img src="Pictures/Logo-clear.png" alt="ProCenter logo" class="img-fluid "></a>
-          <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end  " id="navbarSupportedContent">
-            <ul class="navbar-nav mr-sm-2 ">
-              <li class="nav-item ">
-                <a class="nav-link line" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Profile
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square px-3"></i>Edit profile </a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-bell px-3"></i> Notification </a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right px-3"></i>Log out </a></li>
-                </ul>
-              </li>
-              
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Educator
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Find an educator</a></li>
-                  <li><a class="dropdown-item" href="#">Be an educator</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle  line" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Appointment
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item " href="#">My Appointment</a></li>
-                  <li><a class="dropdown-item " href="#">My materials</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link line" href="#">Workshop</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link line" href="about.php">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link line" href="#">contact</a>
-              </li>
-              <!-- <li class="nav-item dropdown">
-              <img class="h-100 w-100 px-5 dropdown-toggle line" src="Pictures/icons8-verified-account-64.png" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              </img>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square px-3"></i>Edit profile </a></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-bell px-3"></i> Notification </a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right px-3"></i>Log out </a></li>
-                </ul>
-              </li> -->
-            </ul>
-          
-        </div>
-        </div>
-    </nav>
-</header> 
+<?php 
+    session_start();
+    if (!isset($_SESSION['college_id']))
+    header("Location: login.php");
+   ?>
 
+<!--------------------------------Start Header---------------------------------------->
+<?php include("login_db.php");
+    if( $_SESSION["user_type"] == 'student') {
+         include ("student_header.php");
+      } 
+    else if($_SESSION["user_type"] == 'admin') {
+         include ("admin_header.php");
+      }
+    else if ($_SESSION["user_type"] == 'educator')
+    {
+        include ("educator_header.php");
+    }
+    ?>
+ 
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
 
-  
 
 <!----------------------------------Start About Section-------------------------------------------->
-<section id="scroll">
-            <div class="container px-5 padding ">
+<section id="scroll" >
+            <div class="container px-5  " style="padding-top: 40px;">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6 order-lg-2">
                         <div ><img class="img-fluid rounded-circle" src="Pictures/Presentation-amico.png" alt="..." /></div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
-                        <div class="colorful-bg p-5 rounded-circle">
-                        <h2 class="display-3 color text-center pt-5"><b>About Us</b></h2>
-                            <p class="p-5">CSE ProCenter provides a variety of services for the computer science and engineering department at Yanbu university college.</p>
-                            
+                        <div >
+                            <section class="item-wrapper float-end box-shadow py-5 img-fluid img-responsive card" style="background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0278ff 100%);
+    color:white;">
+                            <h2 class="fs-1 text-center pt-2 pb-3"><b>About Us</b></h2> 
+                             <p class="text-center px-5 mx-5">CSE ProCenter provides a variety of services for the computer science and engineering department at Yanbu university college.</p>  
+                          </section>
                         </div>
                     </div>
                 </div>
             </div>
-        
+            
+            <br>
+
+            
+
         <!-- Content section 2-->
        
             <div class="container px-5">
                 <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 ">
                         <div ><img class="img-fluid rounded-circle" src="Pictures/Course app-amico.png" alt="..." /></div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 order-lg-1">
                         <div >
-                            <h2 class="display-3 color pb-3 text-center"><b>Book a session with our educator</b></h2>
-                            <p> With our sessions, it is easier for students to reach to the right educators and <br>schedule an appointment at a convenient time to improve their knowledge and perform better in the exams. </p>
+                        <section class="item-wrapper float-end box-shadow py-5  img-responsive card" style="background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0278ff 100%);
+    color:white;">
+                            <h2 class=" pt-2 pb-3 text-center"><b>Book a session with our educator</b></h2><!--color-->
+                            <p class="px-5 mx-5 text-center"> With our sessions, it is easier for students to reach to the right educators and <br>schedule an appointment at a convenient time to improve their knowledge and perform better in the exams. </p>
+                        </section>
                         </div>
                     </div>
                 </div>
@@ -128,16 +88,20 @@
         
         <!-- Content section 3-->
         
-            <div class="container px-5">
+            <div class="container px-5 pb-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6 order-lg-2">
                         <div ><img class="img-fluid rounded-circle" src="Pictures/Exams-rafiki.png" alt="..." /></div>
                     </div>
                     <div class="col-lg-6 order-lg-1">
                         <div >
-                        <h2 class="display-3 color pb-3 text-center"><b>Our Programming Center</b></h2>
-                            <p>The programming center of the CSE department aimed to help the students in case they need extra help in some courses.<br>
+                        <section class="item-wrapper float-end box-shadow py-5 img-fluid img-responsive card" style="background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0278ff 100%);
+    color:white;">
+                        <h2 class=" pt-2 pb-3 text-center"><b>Our Programming Center</b></h2><!--color-->
+                            <p class="px-5 mx-5 text-center">The programming center of the CSE department aimed to help the students in case they need extra help in some courses.<br>
         It provided a practical session delivered by excellent students and teachers.</p>
+                        </section>
                         </div>
                     </div>
                 </div>
@@ -147,30 +111,7 @@
 
 
   <!---------------------------------------Footer-------------------------------------------->
-  <footer id="footer" class="text-center footer text-white">
-    <div class="container-fluid ">
-        <div class="row pb-5">
-          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto ">
-          <h3 class="text-uppercase font-weight-bold"><i class="bi bi-geo-alt"></i> Our Address</h3>
-          <p>Yanbu University College (Female Campus)·</p>
-             <p> Department of Computer Science.</p>
-          </div>
-
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto ">
-            <h3 class="text-uppercase font-weight-bold"><i class="bi bi-envelope px-2"></i>Email Us at</h3>
-            <p>ProCenter@gmail.com</p>
-          </div>
-   </div>
-      <hr class="pt-5">
-      <!-- Section: Copyright -->
-      <section class="p-3 pt-0">
-        <div class="row d-flex align-items-center">
-          <div class="col-md-7 col-lg-8 text-center text-md-start">
-            <div class="p-3"><h6>© 2020 Copyright</h6></div>
-          </div>
-    </section> 
-    </div>
-  </footer>
+  <?php include("footer.php");?>
   <!------------------------------------------End footer---------------------------------->
 
 </body>

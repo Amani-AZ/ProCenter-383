@@ -19,11 +19,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="style.css" rel="stylesheet">
+    <link href="style 1.css" rel="stylesheet">
 
   </head>
   <body>
 
+  <?php 
+    session_start();
+    if (!isset($_SESSION['college_id']))
+    header("Location: login.php");
+   ?>
+
+<!--------------------------------Start Header---------------------------------------->
+<?php include("login_db.php");
+    if( $_SESSION["user_type"] == 'student') {
+         include ("student_header.php");
+      } 
+    else if($_SESSION["user_type"] == 'admin') {
+         include ("admin_header.php");
+      }
+    else if ($_SESSION["user_type"] == 'educator')
+    {
+        include ("educator_header.php");
+    }
+    ?>
+ 
+<!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
     <div class="schedule container p-5">
         <div class="row">
             <div class="col-md-12">
@@ -120,6 +141,6 @@
             </div>
         </div>
     </div>
-       
+    <?php include("footer.php");?>
     </body>
 </html>
