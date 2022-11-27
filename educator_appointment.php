@@ -22,7 +22,29 @@
     <link href="style.css" rel="stylesheet">
 
   </head>
+  
   <body>
+    
+  <?php 
+   session_start();
+    if (!isset($_SESSION['college_id']))
+    header("Location: login.php");
+   ?>
+    <!-- ----------------------------------------------------header part------------------------------------------------------ -->
+    <?php include("login_db.php");
+    if( $_SESSION["user_type"] == 'student') {
+         include ("student_header.php");
+      } 
+    else if($_SESSION["user_type"] == 'admin') {
+         include ("admin_header.php");
+      }
+    else if ($_SESSION["user_type"] == 'educator')
+    {
+        include ("educator_header.php");
+    }
+    ?>
+
+ <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
 
     <div class="schedule container p-5">
         <div class="row">
@@ -47,15 +69,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>3910191</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>                              
-                                </tr>
+                            <?php
+                            include 'db_con.php';
+                            $query="select * from StuSession where `eduName`='$_SESSION[name]'"; // Fetch all the data from the table
+                            $result=mysqli_query($conn,$query);
+                            ?>
+                            <?php if (mysqli_num_rows($result) > 0): ?>
                                 
-                                    </tbody>
+                            <?php $i = 1; while($array=mysqli_fetch_row($result)):  ?>
+                                <tr>
+                                 <td><?php echo $i?></td>
+                                <td scope="row"><?php echo $array[1];?></td>
+                                <td><?php echo $array[3];?></td>
+                                <td><?php echo $array[4];?></td>
+                                <td><?php echo $array[5];?></td>
+                                </tr>
+                                <?php endwhile; ?>
+                                <?php else: ?>
+                                <tr>
+                                <td colspan="4" rowspan="1" headers="" class="w3-center">No Appointment is Found</td>
+                                </tr>
+                                <?php endif; ?>
+                                <?php mysqli_free_result($result); ?>
+                                </tbody>
                                 </table>
                             </div>
                         </div>
@@ -65,5 +101,11 @@
         </div>
     </div>
        
+  <?php include("footer.php");?>
+    
     </body>
 </html>
+
+
+
+

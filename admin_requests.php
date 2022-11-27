@@ -23,6 +23,7 @@
 
   </head>
   <body>
+
   <?php 
     session_start();
     if (!isset($_SESSION['college_id']))
@@ -44,7 +45,6 @@
     ?>
  
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
-
     <div class="schedule container p-5">
         <div class="row">
             <div class="col-md-12">
@@ -69,82 +69,74 @@
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td class="stuName">Sara Ahmed</td>
-                                    <td>3910000</td>
-                                    <td>CS383</td>
-                                    <td>Senior</td>
-                                    <td>4.5</td>
-                                    <td>Junior</td>
-                                    <td>
-                                        <!-- <ul class="action-list">
-                                            <li><a href="#" data-tip="reject"><i class="fa-solid fa-xmark">Reject</i></a></li>
-                                            <li><a href="#" data-tip="accept"><i class="fa-solid fa-check">Accept</i></a></li>
-                                        </ul> -->
-                                        <a href="#" data-tip="reject"><i class="fa-solid fa-xmark"></i></a>
-                                        <a href="#" data-tip="accept"><i class="fa-solid fa-check"></i></a>
-                                        
-                                    </td> 
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td class="stuName">Sara Ahmed</td>
-                                    <td>3910000</td>
-                                    <td>CS383</td>
-                                    <td>Senior</td>
-                                    <td>4.5</td>
-                                    <td>Junior</td>
-                                    <td>
-                                        <!-- <ul class="action-list">
-                                            <li><a href="#" data-tip="reject"><i class="fa-solid fa-xmark">Reject</i></a></li>
-                                            <li><a href="#" data-tip="accept"><i class="fa-solid fa-check">Accept</i></a></li>
-                                        </ul> -->
-                                        <a href="#" data-tip="reject"><i class="fa-solid fa-xmark"></i></a>
-                                        <a href="#" data-tip="accept"><i class="fa-solid fa-check"></i></a>
-                                        
-                                    </td>                                
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td class="stuName">Sara Ahmed</td>
-                                    <td>3910000</td>
-                                    <td>CS383</td>
-                                    <td>Senior</td>
-                                    <td>4.5</td>
-                                    <td>Junior</td>
-                                    <td>
-                                        <!-- <ul class="action-list">
-                                            <li><a href="#" data-tip="reject"><i class="fa-solid fa-xmark">Reject</i></a></li>
-                                            <li><a href="#" data-tip="accept"><i class="fa-solid fa-check">Accept</i></a></li>
-                                        </ul> -->
-                                        <a href="#" data-tip="reject"><i class="fa-solid fa-xmark"></i></a>
-                                        <a href="#" data-tip="accept"><i class="fa-solid fa-check"></i></a>
-                                        
-                                    </td>                                 
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td class="stuName">Sara Ahmed</td>
-                                    <td>3910000</td>
-                                    <td>CS383</td>
-                                    <td>Senior</td>
-                                    <td>4.5</td>
-                                    <td>Junior</td>
-                                    <td>
-                                        <!-- <ul class="action-list">
-                                            <li><a href="#" data-tip="reject"><i class="fa-solid fa-xmark">Reject</i></a></li>
-                                            <li><a href="#" data-tip="accept"><i class="fa-solid fa-check">Accept</i></a></li>
-                                        </ul> -->
-                                        <a href="#" data-tip="reject"><i class="fa-solid fa-xmark"></i></a>
-                                        <a href="#" data-tip="accept"><i class="fa-solid fa-check"></i></a>
-                                        
-                                    </td>                                
-                                </tr>
-                                    </tbody>
-                                </table>
+                                <form method="post" action="">
+        <?php
+   
+
+        include "db_con.php";
+        $query="select * from requests"; // Fetch all the data 
+        $result = mysqli_query($conn, $query);
+        $i = 1;
+        while ($row = mysqli_fetch_array($result)) {
+
+            $sName = $row['fname'];
+            $lName = $row['lname'];
+            $Id = $row['id'];
+            $subject = $row['subject'];
+            $level = $row['level'];
+            $GPA = $row['GPA'];
+            $status = $row['status'];
+            echo "<td>".$i."</td>";
+            echo "<td>{$sName} ";
+            echo "{$lName}</td>";
+            echo "<td>{$Id}</td>";
+            echo "<td>{$subject}</td>";
+            echo "<td>{$level}</td>";
+            echo "<td>{$GPA}</td>";
+            if ($status==1){
+              echo "<td>Allowed</td>";
+            }
+            else{
+              echo "<td>Denied</td>";
+            }  
+            echo "<td><button  class='btn  btn-light btn-outline-primary p-2 mx-3' style='font-size:2rem' type='submit' name='sAcc' value='{$Id}'>Accept</button>";
+            // echo "<td><button class='w3-btn w3-teal w3-border' type='submit' name='sAcc' value='{$Id}'>Accept</button>  ";
+            // echo "  <button class='w3-btn w3-border w3-white type='submit' name='sRej' value='{$Id}'>Reject</button></td>";
+            echo "<button  class='btn  btn-light btn-outline-primary  p-2 mx-3' style='font-size:2rem' type='submit' name='sRej' value='{$Id}'>Reject</button></td>";
+
+            echo "</tr>";
+
+            $i++;
+        }
+
+    if (isset($_POST['sAcc']) && intval($_POST['sAcc'])) {
+        $user_id = (int) $_POST['sAcc'];
+        $appUpdateQuery = "UPDATE Requests SET status = '1' WHERE id='".$user_id."'";
+         mysqli_query($conn, $appUpdateQuery);
+
+         // add  as an educator
+         $query="select * from eduinformation"; // Fetch all the data 
+         $result1 = mysqli_query($conn, $query);
+         $queryAdd= "INSERT into eduinformation(id,eduNAME,course) values('$Id','$sName','$subject')";
+         mysqli_query($conn,$queryAdd);
+
+         //change the login type
+         $updateUserType = "UPDATE login SET user_type = 'educator' WHERE college_id='".$user_id."'";
+         mysqli_query($conn, $updateUserType);
+    }
+    if (isset($_POST['sRej']) && intval($_POST['sRej'])) {
+        $user_id = (int) $_POST['sRej'];
+        $appUpdateQuery = "UPDATE Requests SET status = '0' WHERE id='".$user_id."'";
+        mysqli_query($conn, $appUpdateQuery);
+        $querydelete= "delete from eduinformation where id ='".$Id."'";
+         mysqli_query($conn,$querydelete);
+         //change the login type
+         $TypeStudent = "UPDATE login SET user_type = 'student' WHERE college_id='".$user_id."'";
+         mysqli_query($conn, $TypeStudent);
+    }
+?>
+</form>
+                            </table>
                             </div>
                         </div>
                     </div>
@@ -155,5 +147,3 @@
     <?php include("footer.php");?>
     </body>
 </html>
-
-

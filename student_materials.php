@@ -1,3 +1,4 @@
+<?php include 'files_logic.php';?>
 <html>
   <head>
     <title>Student Materials</title>
@@ -36,7 +37,7 @@
   <body>
 
   <?php 
-    session_start();
+    // session_start();
     if (!isset($_SESSION['college_id']))
     header("Location: login.php");
    ?>
@@ -71,54 +72,38 @@
                         <table class="table text-white" style="padding:0;">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                    <th>Educator name</th>
+                                    <th>Filename</th>
+                                    <th>size (in mb)</th>
+                                    <th>Download no</th>
+                                    <th>Action</th>
+                                    <!-- <th>#</th>
                                     <th>Educator Name</th>
                                     <th>File Name</th>
-                                    <th>Download</th>
+                                    <th>Download</th> -->
                                 </tr>
                             </thead>
                             <tbody>
+                                
+                            <?php 
+                            if (mysqli_num_rows($result2) > 0):
+                            foreach ($f as $file):?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="download"><i class="fa-solid fa-file-arrow-down" style="padding-left:40px;"></i></a></li>
-                                        </ul>
-                                    </td>                                
+                                <td><?php echo $file['edu_name']; ?></td>
+                                <td><?php echo $file['name']; ?></td>
+                                <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
+                                <td><?php echo $file['downloads']; ?></td>
+                                <td><a href="student_materials.php?file_id=<?php echo $file['no'] ?>"><i class="fa-solid fa-file-arrow-down"></i> Download</a></td>
+                                <!-- <li><a href="#" data-tip="download"><i class="fa-solid fa-file-arrow-down" style="padding-left:40px;"></i></a></li> -->
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>
-                                        <ul class="action-list">
-                                             <li><a href="#" data-tip="download"><i class="fa-solid fa-file-arrow-down" style="padding-left:40px;"></i></a></li>
-                                        </ul>
-                                    </td>                                
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="download"><i class="fa-solid fa-file-arrow-down" style="padding-left:40px;"></i></a></li>
-                                        </ul>
-                                    </td>                                
-                                </tr>
-                                <tr>
-                                            <td>4</td>
-                                            <td>Dr.Kajal</td>
-                                            <td>CS383</td>
-                                            <td>
-                                                <ul class="action-list">
-                                                    <li><a href="#" data-tip="download"><i class="fa-solid fa-file-arrow-down" style="padding-left:40px;"></i></a></li>
-                                                </ul>
-                                            </td>                                
-                                        </tr>
-                                    </tbody>
+                            <?php endforeach;?>
+                            <?php else: ?>
+                                    <tr>
+                                    <td colspan="5" rowspan="1" headers="" class="text-center">No materials is Found</td>
+                                    </tr>
+                            <?php endif; ?>
+                            <?php mysqli_free_result($result2); ?>
+                            </tbody>
                                 </table>
                             </div>
                         </div>
@@ -129,6 +114,7 @@
     </div>
 
     <?php include("footer.php");?>
-       
     </body>
 </html>
+
+

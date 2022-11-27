@@ -28,7 +28,7 @@ if(isset($_POST['sub']))//check wheather the user click on log in button
                     }
                     if( $_SESSION["user_type"] == 'admin')  
                     {
-                        header("location: requests.php");
+                        header("location: admin_requests.php");
                     }
 
             }

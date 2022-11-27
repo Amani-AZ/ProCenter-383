@@ -64,7 +64,7 @@
 <div class="container-fluid" data-aos="fade-up">
   <div class="text-center">
     <h3>Be a Volunteer Student</h3>
-    <p class="lead">Registration Form</p>
+    <p class="lead">Fill out the registration form to become an educator & spread the knowledge</p>
   </div>
 
 <div class="row" >
@@ -94,7 +94,7 @@
      }
  }
 ?>
-  <form action="" method="post" class="row my-5"> 
+  <form action="" method="post" class="row my-5 shadow p-4"> 
               <div class="col-md-4 my-md-3">
                 <label for="FN" class="form-label">First Name</label>
                 <input type="text" class="form-control" name="FN" required>
@@ -146,6 +146,7 @@
 
 <?php include("footer.php");?>
 <!-- ======= End of Request to be Volunteer ======= -->
+
 <!-- ========================== Start Of javaScript files  ========================== -->
 <script src="/assets/js/aos.js"></script>
 <script src="/assets/js/aos.js"></script>

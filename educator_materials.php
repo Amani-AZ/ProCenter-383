@@ -1,3 +1,4 @@
+<?php include 'files_logic.php';?>
 <html>
   <head>
     <title>Educator Materials</title>
@@ -23,7 +24,24 @@
 
   </head>
   <body>
-
+  <?php 
+    if (!isset($_SESSION['college_id']))
+    header("Location: login.php");
+   ?>
+ <!-- ----------------------------------------------------header part------------------------------------------------------ -->
+ <?php include("login_db.php");
+    if( $_SESSION["user_type"] == 'student') {
+         include ("student_header.php");
+      } 
+    else if($_SESSION["user_type"] == 'admin') {
+         include ("admin_header.php");
+      }
+    else if ($_SESSION["user_type"] == 'educator')
+    {
+        include ("educator_header.php");
+    }
+    ?>
+ <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
     <div class="schedule container p-5">
         <div class="row">
             <div class="col-md-12">
@@ -39,33 +57,78 @@
                         <table class="table text-white" style="padding:0;">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Student id</th>
-                                    <th>File Name</th>
-                                    <th>Download</th>
+                                    <th>Student ID</th>
+                                    <th>Filename</th>
+                                    <th>size (in mb)</th>
+                                    <th>Downloads</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            <?php 
+                            if (mysqli_num_rows($result) > 0):  
+                            foreach ($files as $file): ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>3910181</td>
-                                    <td>CS383.pdf</td>
-                                    <td>
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="download"><i class="fa-solid fa-file-arrow-down" style="padding-left:40px;"></i></a></li>
-                                        </ul>
-                                    </td>                                
+                                <td><?php echo $file['stu_id']; ?></td>
+                                <td><?php echo $file['name']; ?></td>
+                                <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
+                                <td><?php echo $file['downloads']; ?></td>
+                                <td><a href="student_materials.php?file_id=<?php echo $file['no'] ?>">Download</a></td>
                                 </tr>
-                                
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                <?php endforeach;?>
+                                <?php else: ?>
+                                <tr>
+                                <td colspan="5" rowspan="1" headers="" class="text-center text-white">No materials is Found</td>
+                                </tr>
+                            <?php endif; ?>
+                            <?php mysqli_free_result($result); ?>
+<!-- ---------------------------------------------- End of Download ------------------------------------------------------ -->
+<!-- ---------------------------------------------- Upload ------------------------------------------------------ -->
+                            </tbody>
+                        </table>
                     </div>
+<!-- ---------------------------------------------- End of Upload ------------------------------------------------------ -->
+                <div class="container panel-body table-responsive ">
+                    <form action="#" method="post" enctype="multipart/form-data">
+                    <!-- <div class="row my-3"> -->
+                    <div class="row mt-4">
+                    <div class=" d-grid gap-2 col-6 mx-auto">
+                        <label class="form-label text-white">Upload File</label>
+                        <input type="file" name="myfile[]" class="text-white" id="file" multiple required>
+                            <?php
+                                $query="SELECT * FROM `login` WHERE user_type='student'";
+                                $result1 = mysqli_query($conn, $query);
+                            ?>
+                    </div>
+                    </div>
+                    <div class="row mt-4">
+                    <div class=" d-grid gap-2 col-6 mx-auto">
+                    <!-- <div class=" w-50 h-50 align-items-center"> -->
+                        <label  class="form-label text-white"  name="student"> Student ID</label>
+                        <select name="student" class="form-select" required>
+                        <option value="" disabled selected hidden>Select Student</option>
+                            <?php while($row2 = mysqli_fetch_array($result1)):;?>
+                            <option  value="<?php echo $row2[0];?>"><?php echo $row2[0];?></option>
+                            <?php endwhile;?>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="row mt-4">
+                    <div class=" d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-primary btn-lg rounded-5 btn-block" type="submit" name="save"> Upload Material</button>    
+                    </div>
+                    </div>
+                    </form>
                 </div>
-            </div>
         </div>
     </div>
-       
+</div>
+</div>
+
+
+                
+            
+  <?php include("footer.php");?>
+    
     </body>
 </html>

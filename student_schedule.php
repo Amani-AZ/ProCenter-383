@@ -1,16 +1,16 @@
-<html>
+<!-- <html>
   <head>
-    <title>Student Schedule</title>
+    <title>Student Schedule</title> -->
 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 
     <!-- Bootstrap CSS -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     
     <!-- fontawesome for icons -->
-    <script src="https://kit.fontawesome.com/f67ca12063.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/f67ca12063.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -22,29 +22,31 @@
     <link href="style 1.css" rel="stylesheet">
 
   </head>
-  <body>
+  <body> -->
   <?php 
-    session_start();
-    if (!isset($_SESSION['college_id']))
-    header("Location: login.php");
+    // session_start();
+    // if (!isset($_SESSION['college_id']))
+    // header("Location: login.php");
    ?>
 
 <!--------------------------------Start Header---------------------------------------->
-<?php include("login_db.php");
-    if( $_SESSION["user_type"] == 'student') {
-         include ("student_header.php");
-      } 
-    else if($_SESSION["user_type"] == 'admin') {
-         include ("admin_header.php");
-      }
-    else if ($_SESSION["user_type"] == 'educator')
-    {
-        include ("educator_header.php");
-    }
+
+    <?php 
+    // include("login_db.php");
+    // if( $_SESSION["user_type"] == 'student') {
+    //      include ("student_header.php");
+    //   } 
+    // else if($_SESSION["user_type"] == 'admin') {
+    //      include ("admin_header.php");
+    //   }
+    // else if ($_SESSION["user_type"] == 'educator')
+    // {
+    //     include ("educator_header.php");
+    // }
     ?>
  
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
-    <div class="schedule container p-5">
+    <!-- <div class="schedule container p-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel">
@@ -68,43 +70,43 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <tr> -->
                               <?php 
-                              include "login_db.php";
+                            //   include "login_db.php";
                               ?>
                               <?php   
-                              include 'db_con.php';
-                              $query="select * from eduschedule"; // Fetch all the data 
-                              $result1 = mysqli_query($conn, $query);
+                            //   include 'db_con.php';
+                            //   $query="select * from eduschedule"; // Fetch all the data 
+                            //   $result1 = mysqli_query($conn, $query);
                               
-                                $i=1;  
+                            //     $i=1;  
                                 
-                                  while ($result = mysqli_fetch_assoc($result1)) {  
-                                      echo "  
-                                            <tr class='data'>   
-                                            <td>".$i++."</td>
-                                            <td>".$result['edu_name']."</td> 
-                                            <td>".$result['course']."</td>  
-                                            <td>".$result['date']."</td>  
-                                            <td>".$result['time']."</td> 
-                                            <td class='book'>
-                                              <ul class='action-list'>
-                                                <li><a href='db_book.php?stuid=".$_SESSION['college_id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' data-tip='book'> <i class='fa-solid fa-calendar-plus'></i> </a></li>
-                                              </ul></td> 
-                                            </tr>  
-                                          ";  
-                                  }              
+                            //       while ($result = mysqli_fetch_assoc($result1)) {  
+                            //           echo "  
+                            //                 <tr class='data'>   
+                            //                 <td>".$i++."</td>
+                            //                 <td>".$result['edu_name']."</td> 
+                            //                 <td>".$result['course']."</td>  
+                            //                 <td>".$result['date']."</td>  
+                            //                 <td>".$result['time']."</td> 
+                            //                 <td class='book'>
+                            //                   <ul class='action-list'>
+                            //                     <li><a href='db_book.php?stuid=".$_SESSION['college_id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' data-tip='book'> <i class='fa-solid fa-calendar-plus'></i> </a></li>
+                            //                   </ul></td> 
+                            //                 </tr>  
+                            //               ";  
+                            //       }              
                                ?>
-                            </tbody>
+                            <!-- </tbody>
                         </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
-    <?php include("footer.php");?>
+    <!-- <?php include("footer.php");?> -->
        
-    </body>
-</html>
+    <!-- </body>
+</html> -->

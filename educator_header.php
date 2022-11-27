@@ -27,8 +27,7 @@
          <!-- add class btn-change  -->
       <div class="logout">
     <a href="logout.php?logout" class="my-2 for mx-5" >
-      <i class="bi bi-box-arrow-in-right margin-home " ></i>Log out</a
-          >
+      <i class="bi bi-box-arrow-in-right margin-home " ></i>Log out</a>
 </div>
       </div>
     </nav>

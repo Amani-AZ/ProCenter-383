@@ -15,14 +15,12 @@
     <script src="main.js"></script>
     <script>
       function redirectCreateSch(){
-    window.location  = "educator_schedule.php";
-}
-
-function redirectViewApp(){
-  window.location  = "educator_appointment.php";
-}
+        window.location  = "educator_schedule.php";
+      }
+      function redirectViewApp(){
+        window.location  = "educator_appointment.php";
+      }
     </script>
-    
 </head>
 <body>
 
@@ -30,9 +28,9 @@ function redirectViewApp(){
     session_start();
     if (!isset($_SESSION['college_id']))
     header("Location: login.php");
-   ?>
+?>
 
-<!--------------------------------Start Header---------------------------------------->
+<!--------------------------------------------------Start Header-------------------------------------------------------------->
 <?php include("login_db.php");
     if( $_SESSION["user_type"] == 'student') {
          include ("student_header.php");
@@ -44,8 +42,7 @@ function redirectViewApp(){
     {
         include ("educator_header.php");
     }
-    ?>
- 
+?> 
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
 
 

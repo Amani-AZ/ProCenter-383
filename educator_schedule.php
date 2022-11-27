@@ -98,8 +98,9 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 text-center">
                                 <h3 class="title text-white">Educator Schedule</h3>
+                                <p class="lead text-capitalize text-white">Choose the Available time for you to create new Appointment</p>
                             </div>
                         </div>
                     </div>
@@ -107,47 +108,96 @@
                         <table class="table text-white">
                             <thead>
                                 <tr>
-                                    <th style="padding-left: 70px;">Course</th>
-                                    <th style="padding-left: 15px;">Appointment Date</th>
-                                    <th style="padding-left: 0px; margin-left:0px;">Available Time</th>
+                                    <th >Course</th>
+                                    <th >Appointment Date</th>
+                                    <th >Available Time</th>
                                     <th>Add new appointment</th>
                                 </tr>
                             </thead>
                             <tbody>
+
                                 <tr>
-                                    <td style="padding-left: 70px;">
-                                        <div class="col-8">
-                                            <input class="form-control form-control-lg" type="text" placeholder="Course Name">
+                                <?php
+
+                                if(isset($_POST['submit']))
+                                {
+                                
+                                    $course=$_POST['course'];
+                                    $date=$_POST['date'];
+                                    $time=$_POST['time'];
+                                    $sql="insert into eduschedule(edu_id,edu_name,course,date,time) values('$_SESSION[college_id]','$_SESSION[name]','$course','$date','$time')";
+                                    if( mysqli_query($conn,$sql)){
+                                    echo "<script>alert('New appointment is added');</script>";
+                                    }
+                                    else
+                                    {
+                                    echo "<script>alert('Appointment is not added');</script>";
+                                    }
+                                }
+                                ?>
+                                <!-- <div class="container  table-responsive "> -->
+                                <!-- <hr class="text-white"> -->
+                                <form method="post" action="">
+                                    <td>
+                                        <div >
+                                            <input class="form-control"  name="course" type="text" placeholder="Course Name" required>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="col-4">
-                                            <input type="date" id="date" name="date">
+                                        <div >
+                                            <input class="form-control" type="date" id="date" name="date" required >
                                         </div>
                                     </td>
-                                    <td style="padding-left: 1px;">
-                                        <div class="col-4">
-                                            <input type="time" id="appt" name="appt">
+                                    <td >
+                                        <div >
+                                            <input type="time" id="appt" name="time" required>
                                         </div>
                                     </td>                                    
                                     <td>
-                                        <div class="col-4">
-                                            <ul class="action-list">
+                                        <div >
+                                            <!-- <ul class="action-list"> -->
+                                                <!-- <li><a href="#" data-tip="add"><i class="fa-sharp fa-solid fa-plus" style="padding-left:80px;"></i></a></li>
                                                 <li><a href="#" data-tip="add"><i class="fa-sharp fa-solid fa-plus" style="padding-left:80px;"></i></a></li>
-                                            </ul>
+                                                <td><button type="submit"  name="submit" class="w3-teal w3-border-teal w3-round-xlarge w3-padding" >
+                                                <i class="fa fa-plus  Edit-out-logo-size add" ></i> Add new Appointment </button>
+                                                </td> -->
+                                                <!-- <td> --> 
+                                                    <button type="submit"  name="submit" class="btn btn-lg btn-primary p-3 rounded-5" >
+                                                        <i class="fa-sharp fa-solid fa-plus" ></i> Add new Appointment
+                                                    </button>
+                                                <!-- </td> -->
+                                            <!-- </ul> -->
                                         </div>
-                                    </td>                                
-                                </tr>
+                                    </td>
+                                </form>   
                                 
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                <!-- </div>                 -->
+                                </tr>
+                            
+                                <?php   
+                                if ($num = mysqli_num_rows($run)>0) {  
+                                   
+                                        while ($result = mysqli_fetch_assoc($run)) {  
+                                            echo "  
+                                                <tr class='data '>   
+                                                <td>".$result['course']."</td>  
+                                                <td>".$result['date']."</td>  
+                                                <td>".$result['time']."</td> 
+                                                <td><a href='db_delete.php?id=".$result['id']."' class='btn btn-lg btn-primary rounded-5  del'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
+                                                </tr>  
+                                            ";  
+                                        }  
+                                }  
+                            ?>  
+                            
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
        
     </body>
 </html>
@@ -162,3 +212,4 @@
   
 </body>
 </html> 
+

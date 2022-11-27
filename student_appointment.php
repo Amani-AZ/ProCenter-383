@@ -80,7 +80,37 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                            <?php
+                                include 'db_con.php';
+                                $query="select * from `StuSession` WHERE `stuid`='$_SESSION[college_id]'"; // Fetch all the data from the table 
+                                $result1 = mysqli_query($conn, $query);
+                                $t=1;
+                                ?>
+                                 <?php if (mysqli_num_rows($result1) > 0): ?>
+                                <?php  while ($result = mysqli_fetch_assoc($result1)) {
+                                    
+                                    echo "  
+                                        <tr class='data'>  
+                                        <td>".$t."</td>  
+                                        <td>".$result['eduName']."</td> 
+                                        <td>".$result['course']."</td>  
+                                        <td>".$result['date']."</td>  
+                                        <td>".$result['time']."</td> 
+                                        <td><a href='db_studelete.php?app_no=".$result['app_no']."' class='w3-button w3-teal w3-border-teal w3-round-xlarge'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
+                                        </tr>  
+                                    ";  
+                                    $t++;
+                                }
+                                    
+                                ?>
+                                <?php else: ?>
+                                        <tr>
+                                        <td colspan="5" rowspan="1" headers="" class="w3-center">No Appointment is Found</td>
+                                        </tr>
+                                <?php endif; ?>
+                                <?php mysqli_free_result($result1); ?>
+                                  </tbody>
+                                <!-- <tr>
                                     <td>1</td>
                                     <td>Dr.Kajal</td>
                                     <td>CS383</td>
@@ -91,44 +121,7 @@
                                             <li><a href="#" data-tip="download"><i class="fa-solid fa-xmark"></i></a></li>
                                         </ul>
                                     </td>                               
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>
-                                    <td class="cancel">
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="download"><i class="fa-solid fa-xmark"></i></a></li>
-                                        </ul>
-                                    </td>                                
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>
-                                    <td class="cancel">
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="download"><i class="fa-solid fa-xmark"></i></a></li>
-                                        </ul>
-                                    </td>                                
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>
-                                    <td class="cancel">
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="download"><i class="fa-solid fa-xmark"></i></a></li>
-                                        </ul>
-                                    </td>                                
-                                </tr>
-                                    </tbody>
+                                </tr> -->
                                 </table>
                             </div>
                         </div>

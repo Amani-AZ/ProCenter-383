@@ -42,6 +42,7 @@ header("Location: login.php");
   <div class="container-fluid" data-aos="fade-up">
     <div >
       <h3 class="text-center display-6  my-3">Contact Us</h3>
+      <p class="lead text-center text-capitalize">We would love to hear from you.</p>
     </div>
     <div class="row">
       <div class="col-lg-4 offset-lg-1">

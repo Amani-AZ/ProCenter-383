@@ -43,7 +43,8 @@
     }
     ?>
  
-<!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
+<!-- ---------------------------- End of header part---------------------------------- -->
+
 <!-- ================ Start of about the workshop ================ -->
 <section>
     <div class="container" data-aos="fade-up">
@@ -67,11 +68,12 @@
 <!-- ================ End of about the workshop ================ -->
 
  <!-- ================ Start of Request workshop Section ================ -->
- <section class="p-4 my-4" style="background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0277ff 100%);">
+ <section class="p-4 my-5" style="background-image: linear-gradient(225deg, #FF3CAC 0%, #0277ff 100%);">
   <div class="container-fluid" data-aos="fade-up">
 
     <div class="text-center">
       <h3 class="text-white fw-bold">Request a Workshop</h3>
+      <p class="lead text-white">Fill out the form to make your worshop in CSE department</p>
     </div>
     <div class="row">
       <div class="col-lg-4 offset-lg-1">

@@ -24,9 +24,19 @@
          
         </ul>
          <!-- add class btn-change  -->
-         <form action="logout.php" method="get">
+
+         <!-- قبل التعديل -->
+         <!-- <form action="logout.php" method="get">
         <div class="mb-2 for"> <button type="button" class="btn mx-4 px-5 " style="border-style: solid;
-    border-color: #0278ff;"><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</button></div>
+        border-color: #0278ff;"><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</button></div> -->
+
+        <!-- بعد التعديل -->
+        <div>
+        <a href="logout.php?logout" class="btn mx-4 px-5"><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</a>
+        </div>
+<!-- 
+        <div class="mb-2 for"> <button type="button" class="btn mx-4 px-5 " style="border-style: solid;
+        border-color: #0278ff;"><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</button></div> -->
     </form>
       </div>
     </nav>
