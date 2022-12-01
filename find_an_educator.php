@@ -45,7 +45,7 @@
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
 
 
-
+<h2 class="text-center pt-5">Choose Your Best Educator and book new session</h2>
 <?php 
      include "login_db.php";
     ?>
@@ -53,12 +53,13 @@
     include 'db_con.php';
     $query="select * from eduschedule"; // Fetch all the data 
     $result1 = mysqli_query($conn, $query);
-      
+   
         while ($result = mysqli_fetch_assoc($result1)) {  
              echo "  
-          <section id='educator ' class='display-m '>
+             
+          <section id='educator ' class=''><!--display-m -->
           <div class='card-group mt-5'>
-             <div class='card mx-3 mb-3 mt-5 box-shadow' style='max-width: 25rem;border-color: #FF3CAC;'>
+             <div class='card mx-3 mb-3 box-shadow' style='max-width: 25rem;border-color: #FF3CAC;'>
              <div class='card-header text-center text-white px-5 py-3'  style=' background-color: #FF3CAC; 
              background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0278ff 100%);'><h4>".$edu=$result['edu_name']."</h4></div>
              <div class='card-body text-center'>
@@ -76,7 +77,7 @@
             </section>
   <!---------------------------------------Footer-------------------------------------------->
   
-  <?php //include("footer.php");?>
+  <?php include("footer.php");?>
   <!------------------------------------------End footer---------------------------------->
 
 </body>
