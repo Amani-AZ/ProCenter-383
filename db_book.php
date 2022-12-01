@@ -13,7 +13,7 @@
          echo "
          <script> 
          alert('New Appoitnment is added');
-         window.location.href='student_schedule.php'; </script>";
+         window.location.href='find_an_educator.php'; </script>";
 
         }
       else{  

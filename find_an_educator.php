@@ -46,64 +46,37 @@
 
 
 
-
-
-<section id="educator">
-<div class="container-fluid pt-5 padding-top ">
-    <div class="row text-center justify-content-center p-5">
-        <div class="col-md-3 card m-3 box-shadow" style="width:350px">
-          <div class="card-body ">
-              <h2 class="card-title pt-4">Ms. Aizal</h2>
-              <p class="card-text">For developers who only require the theme HTML/CSS files</p>
-              <h2 class="pb-4">$29</h2>
-              <button type="button" class="btn btn-danger p-3 w-100">Buy Now</button>
-              <div class="h6">
-              <p class="pt-5">1 Domain</p><hr>
-              <p>1 Team Member</p><hr>
-              <p>Free Apps Only</p><hr>
-              <p>HTML/CSS Only</p><hr>
-              <p>Email Support</p>
-            </div>
-            </div>
-        </div>
-        
-        <div class="col-md-3 card m-3 box-shadow" style="width:350px">
-          <div class="card-body">
-              <h2 class="card-title pt-4">Dr. Manal</h2>
-              <p class="card-text">For small teams creating products that require end users to pay</p>
-              <h2 class="pb-4">$149</h2>
-              <button type="button" class="btn btn-danger p-3 w-100">Buy Now</button>
-              <div class="h6">
-              <p class="pt-5">1 Domain</p><hr>
-              <p><i class="bi bi-arrow-up-circle-fill float-start  text-success"></i>Up to 5 Team Members</p><hr>
-              <p><i class="bi bi-arrow-up-circle-fill float-start  text-success"></i>Paid Apps Allowed</p><hr>
-              <p><i class="bi bi-arrow-up-circle-fill float-start  text-success"></i>Full Source Files *</p><hr>
-              <p><i class="bi bi-arrow-up-circle-fill float-start  text-success"></i>Email Support(24 Hour Turnaround)</p>
-            </div>
-            </div>
-        </div>
-        <div class="col-md-3 card m-3 box-shadow " style="width:350px">
-          <div class="card-body">
-              <h2 class="card-title pt-4">Ms. City</h2>
-              <!-- <p class="card-text">Cs383</p> -->
-              <h3 class="pb-4">$Cs383</h3>
-              <button type="button" class="btn btn-danger p-3 w-100">Buy Now</button>
-              <div class="h6">
-              <p class="pt-5">1 Domain</p><hr>
-              <p><i class="bi bi-arrow-up-circle-fill float-start  text-success"></i>Up to 15 Team Members</p><hr>
-              <p><i class="bi bi-arrow-up-circle-fill float-start  text-success"></i>Paid Apps Allowed</p><hr>
-              <p><i class="bi bi-arrow-up-circle-fill float-start  text-success"></i>Full Source Files *</p><hr>
-              <p><i class="bi bi-arrow-up-circle-fill float-start  text-success"></i>Dedicated Piority Support</p>
-            </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-</section>
+<?php 
+     include "login_db.php";
+    ?>
+    <?php   
+    include 'db_con.php';
+    $query="select * from eduschedule"; // Fetch all the data 
+    $result1 = mysqli_query($conn, $query);
+      
+        while ($result = mysqli_fetch_assoc($result1)) {  
+             echo "  
+          <section id='educator ' class='display-m '>
+          <div class='card-group mt-5'>
+             <div class='card mx-3 mb-3 mt-5 box-shadow' style='max-width: 25rem;border-color: #FF3CAC;'>
+             <div class='card-header text-center text-white px-5 py-3'  style=' background-color: #FF3CAC; 
+             background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0278ff 100%);'><h4>".$edu=$result['edu_name']."</h4></div>
+             <div class='card-body text-center'>
+               <p class='card-text'><b>Course:</b> ".$course=$result['course']."</p>
+               <p ><b>Date: </b>".$date=$result['date']."</p>
+               <p ><b>Time: </b>".$time=$result['time']."</p>
+               <div class='card-Fora'> <a href='db_book.php?stuid=".$_SESSION['college_id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' class=' book_link btn '> Book New Session</a></div>
+             </div>
+           </div>
+             </div>
+             </div>
+            ";  
+          }?>
+         
+            </section>
   <!---------------------------------------Footer-------------------------------------------->
   
-  <?php include("footer.php");?>
+  <?php //include("footer.php");?>
   <!------------------------------------------End footer---------------------------------->
 
 </body>
