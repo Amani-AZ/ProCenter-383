@@ -13,7 +13,7 @@
          header('location:student_appointment.php'); 
           $to = "3910863@stu.rcyci.edu.sa";
           $subject = 'Subject to here';
-          $content = '"Your appointment is canceled!!\n\nAppointment Details:\n\nEducator Name: ".$name." \n\nCourse: ".$Coures."\n\nDate: ".$Date. "\nTime: ".$Time';
+          $content = "Your appointment is canceled!!\n\nAppointment Details:\n\nEducator Name: ".$name." \n\nCourse: ".$Coures."\n\nDate: ".$Date. "\nTime: ".$Time;
           $headers = "From: Your-Email\r\n";
           //*** Show the result... ***
           if (mail($to, $subject, $content, $headers))

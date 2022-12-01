@@ -3,14 +3,14 @@
  if (isset($_GET['app_no'])) {  
       $appNum = $_GET['app_no'];
       $name = $_GET['eduName'];
-      $Coures = $_GET['course'];
-      $Date = $_GET['date'];
-      $Time = $_GET['time'];  
-      $query = "DELETE FROM `stusession` WHERE  app_no = '$appNum'";  
+      $coures = $_GET['course'];
+      $date = $_GET['date'];
+      $time = $_GET['time'];  
+      $query = "delete from StuSession  WHERE app_no = '$appNum'"; 
       $run = mysqli_query($conn,$query);
       if ($run) {  
          header('location:student_appointment.php'); 
-          $to = "3910191@stu.rcyci.edu.sa";
+          $to = "3910863@stu.rcyci.edu.sa";
           $subject = 'Subject to Here';
           $content = "Your appointment is canceled!.\n\nAppointment Details: \n\nEducator Name: ".$name."\nCourse: ".$coures."\nDate: ".$date. "\nTime: ".$time;
           $headers = "From: Your-Email\r\n";
