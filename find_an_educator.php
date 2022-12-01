@@ -13,8 +13,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- <link href="style.css" rel="stylesheet"> -->
-  <link href="style 1.css" rel="stylesheet">
-  <script src="main.js"></script>
+    <link href="style 1.css" rel="stylesheet">
+    <script src="main.js"></script>
     
 </head>
 <body>
@@ -43,35 +43,70 @@
     ?>
  
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
-
-
-
-<?php 
-     include "login_db.php";
+    <?php 
+    //  include "login_db.php";
     ?>
     <?php   
-    include 'db_con.php';
-    $query="select * from eduschedule"; // Fetch all the data 
-    $result1 = mysqli_query($conn, $query);
+    // include 'db_con.php';
+    // $query="select * from eduschedule"; // Fetch all the data 
+    // $result1 = mysqli_query($conn, $query);
       
-        while ($result = mysqli_fetch_assoc($result1)) {  
-             echo "  
-          <section id='educator ' class='display-m '>
-          <div class='card-group mt-5'>
-             <div class='card mx-3 mb-3 mt-5 box-shadow' style='max-width: 25rem;border-color: #FF3CAC;'>
+    //     while ($result = mysqli_fetch_assoc($result1)) {  
+    //          echo "  
+    //       <section id='educator ' class='display-m '>
+    //       <div class='card-group mt-5'>
+    //          <div class='card mx-3 mb-3 mt-5 box-shadow' style='max-width: 25rem;border-color: #FF3CAC;'>
+    //          <div class='card-header text-center text-white px-5 py-3'  style=' background-color: #FF3CAC; 
+    //          background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0278ff 100%);'><h4>".$edu=$result['edu_name']."</h4></div>
+    //          <div class='card-body text-center'>
+    //            <p class='card-text'><b>Course:</b> ".$course=$result['course']."</p>
+    //            <p ><b>Date: </b>".$date=$result['date']."</p>
+    //            <p ><b>Time: </b>".$time=$result['time']."</p>
+    //            <div class='card-Fora'> <a href='db_book.php?stuid=".$_SESSION['college_id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' class=' book_link btn '> Book New Session</a></div>
+    //          </div>
+    //        </div>
+    //          </div>
+    //          </div>
+    //         ";  
+    //       }
+          ?>
+         
+         
+            <!-- </section> -->
+            <?php 
+            include "login_db.php";
+            ?>
+          <section id='educator ' class=' container '>
+            <div class='row'>
+          <?php
+            include 'db_con.php';
+            $query="select * from eduschedule"; // Fetch all data
+            $result1=mysqli_query($conn,$query);
+            ?>
+            <?php if (mysqli_num_rows($result1) > 0): ?>
+            <?php while($result=mysqli_fetch_assoc($result1)): ?>
+            <div class='card-group mt-5 col-4'>
+             <div class='card mx-3 mb-3 mt-5 box-shadow' style='border-color: #FF3CAC;'>
              <div class='card-header text-center text-white px-5 py-3'  style=' background-color: #FF3CAC; 
-             background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0278ff 100%);'><h4>".$edu=$result['edu_name']."</h4></div>
+             background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #0278ff 100%);'><h4><?php echo $result['edu_name']?></h4></div>
              <div class='card-body text-center'>
-               <p class='card-text'><b>Course:</b> ".$course=$result['course']."</p>
-               <p ><b>Date: </b>".$date=$result['date']."</p>
-               <p ><b>Time: </b>".$time=$result['time']."</p>
-               <div class='card-Fora'> <a href='db_book.php?stuid=".$_SESSION['college_id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' class=' book_link btn '> Book New Session</a></div>
+               <p class='card-text'><b>Course:  </b><?php echo $result['course']?></p>
+               <p ><b>Date: </b><?php echo $result['date'] ?></p>
+               <p ><b>Time: </b><?php echo $result['time'] ?></p>
+               <?php echo "<div class='card-Fora'> <a href='db_book.php?stuid=".$_SESSION['college_id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' class=' book_link btn '> Book New Session</a></div>"
+                ?>  
+             
              </div>
            </div>
              </div>
+             <?php endwhile; ?>
+             <?php else: ?>
+                  <h3 colspan="4" rowspan="1" headers="" class="text-center">No Educator is Found</h3>
+            <?php endif; ?>
+            <?php mysqli_free_result($result1); ?>
              </div>
-            ";  
-          }?>
+          
+         
          
             </section>
   <!---------------------------------------Footer-------------------------------------------->

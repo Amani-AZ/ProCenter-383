@@ -21,5 +21,5 @@ function redirectFindEdu(){
 
  //function to redirect user to Be an Educator
 function redirectBeEdu(){
-    window.location ("be_educator.php");
+    window.location ="be_educator.php";
 }
