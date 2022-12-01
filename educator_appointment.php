@@ -66,6 +66,7 @@
                                     <th>Course</th>
                                     <th> Date</th>
                                     <th> Time</th>
+                                    <th>Cancel</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -100,8 +100,7 @@
                                         </tr>  
                                     ";  
                                     $t++;
-                                }
-                                    
+                                }  
                                 ?>
                                 <?php else: ?>
                                         <tr>
@@ -110,18 +109,6 @@
                                 <?php endif; ?>
                                 <?php mysqli_free_result($result1); ?>
                                   </tbody>
-                                <!-- <tr>
-                                    <td>1</td>
-                                    <td>Dr.Kajal</td>
-                                    <td>CS383</td>
-                                    <td>2022-05-19</td>
-                                    <td>02:15:00</td>
-                                    <td class="cancel">
-                                        <ul class="action-list">
-                                            <li><a href="#" data-tip="download"><i class="fa-solid fa-xmark"></i></a></li>
-                                        </ul>
-                                    </td>                               
-                                </tr> -->
                                 </table>
                             </div>
                         </div>
