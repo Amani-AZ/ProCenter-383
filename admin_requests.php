@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Admin Requests Schedule</title>
+    <title>Educator Requests</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -100,8 +100,6 @@
               echo "<td>Denied</td>";
             }  
             echo "<td><button  class='btn  btn-light btn-outline-primary p-2 mx-3' style='font-size:2rem' type='submit' name='sAcc' value='{$Id}'>Accept</button>";
-            // echo "<td><button class='w3-btn w3-teal w3-border' type='submit' name='sAcc' value='{$Id}'>Accept</button>  ";
-            // echo "  <button class='w3-btn w3-border w3-white type='submit' name='sRej' value='{$Id}'>Reject</button></td>";
             echo "<button  class='btn  btn-light btn-outline-primary  p-2 mx-3' style='font-size:2rem' type='submit' name='sRej' value='{$Id}'>Reject</button></td>";
 
             echo "</tr>";

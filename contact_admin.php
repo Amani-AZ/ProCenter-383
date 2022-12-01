@@ -76,7 +76,7 @@
                                 else{
                                 ?>
                                 <tr>
-                                <td colspan="5" rowspan="1" headers="" class="w3-center">No message is found</td>
+                                <td colspan="4" rowspan="1" headers="" class="text-center">No message is found</td>
                                 </tr>
                                 <?php
                                 } ?>

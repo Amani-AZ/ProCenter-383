@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Admin Requests Schedule</title>
+    <title>Educator workshops</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -52,7 +52,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-12">
-                                <h3 class="title text-white p-2">The Workshop Requests</h3>
+                                <h3 class="title text-white p-2">My Workshop Requests</h3>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
             }
         }
         else{
-            echo '<td colspan="7" rowspan="1" headers="" class="text-center">No request is Found</td>';
+            echo '<td colspan="7" rowspan="1" headers="" class="text-center">No workshop is Found</td>';
             echo "</tr>";
         }
         // mysqli_free_result($result);

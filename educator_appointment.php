@@ -66,7 +66,7 @@
                                     <th>Course</th>
                                     <th> Date</th>
                                     <th> Time</th>
-                                    <th>Cancel</th>
+                                    <!-- <th>Cancel</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -88,7 +88,7 @@
                                 <?php endwhile; ?>
                                 <?php else: ?>
                                 <tr>
-                                <td colspan="4" rowspan="1" headers="" class="w3-center">No Appointment is Found</td>
+                                <td colspan="4" rowspan="1" headers="" class="text-center">No Appointment is Found</td>
                                 </tr>
                                 <?php endif; ?>
                                 <?php mysqli_free_result($result); ?>

@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Admin Requests Schedule</title>
+    <title>Workshop Requests </title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">

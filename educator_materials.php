@@ -73,7 +73,7 @@
                                 <td><?php echo $file['name']; ?></td>
                                 <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
                                 <td><?php echo $file['downloads']; ?></td>
-                                <td><a href="student_materials.php?file_id=<?php echo $file['no'] ?>">Download</a></td>
+                                <td><a class="btn btn-primary p-2 m-2" href="student_materials.php?file_id=<?php echo $file['no'] ?>">Download</a></td>
                                 </tr>
                                 <?php endforeach;?>
                                 <?php else: ?>
@@ -87,7 +87,6 @@
                             </tbody>
                         </table>
                     </div>
-<!-- ---------------------------------------------- End of Upload ------------------------------------------------------ -->
                 <div class="container panel-body table-responsive ">
                     <form action="#" method="post" enctype="multipart/form-data">
                     <!-- <div class="row my-3"> -->
@@ -120,6 +119,8 @@
                     </div>
                     </form>
                 </div>
+<!-- ---------------------------------------------- End of Upload ------------------------------------------------------ -->
+
         </div>
     </div>
 </div>

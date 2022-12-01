@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>CSE ProCenter</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="style 1.css" rel="stylesheet">
     <script src="main.js"></script>
-    <script>
-      function redirectCreateSch(){
-        window.location  = "educator_schedule.php";
-      }
-      function redirectViewApp(){
-        window.location  = "educator_appointment.php";
-      }
-    </script>
 </head>
 <body>
 

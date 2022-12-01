@@ -109,7 +109,7 @@
               </div>
               <div class="col-md-3 my-md-3">
                 <label for="GPA" class="form-label">GPA</label>
-                <input type="text" class="form-control" name="GPA"  placeholder="GPA" required>
+                <input type="number" class="form-control" name="GPA" max="4" min="1" placeholder="GPA (no decimal)" required>
               </div>
               <div class="col-md-5 my-md-3">
                 <label for="level" class="form-label" >Level</label>
