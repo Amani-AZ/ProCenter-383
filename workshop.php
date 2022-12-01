@@ -43,48 +43,46 @@
 <!-- ---------------------------------------------- End of header part------------------------------------------------------ -->
      <!-- ===================== Start of Workshop Section ===================== -->
      <section>
-
         <div class="container" data-aos="fade-up">
-  
           <header class="text-center display-6 fw-bold">
             <h3>Workshops form CSE department</h3>
           </header>
   
           <div class="row my-4">
-            <div class="col-lg-4 workshop">
-              <div class="post-box box-shadow ">
-                <div class="post-img"><img src="Pictures/hardware.jpg" class="img-fluid" alt="hardware workshop"></div>             
-                <div style="color: #0277ff ;font-weight:bold; font-size:1.3rem">0<sup>SR</sup>
-                </div>
-                <span>Tue, September 15</span>
-                <p class="card-body">Learn more about the hardware and the equipment to design a circuit</p>
-                <button type="submit" type="button" class=" btn btn-primary btn-lg btn-block border-0 rounded-5" style=" background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);">Register Now</button>
+          <?php
+            include 'db_con.php';
+            $query="select * from requestws where STATUS=1"; // Fetch all data
+            $result1=mysqli_query($conn,$query);
+            ?>
+            <?php if (mysqli_num_rows($result1) > 0): ?>
+            <?php while($result=mysqli_fetch_assoc($result1)): 
+                // if ($result['STATUS']==1){?
+                ?>
+            <div class="col-lg-4 workshop" >
+              <div class="card  post-box box-shadow "style='border-color: #FF3CAC;'>
+              <div class="text-center" ><h3 style="color: #784BA0 ;font-weight:bold;"><?php echo $result['Workshop_name'] ?><h3></div>
+              <div  style="color: #FF3CAC ;font-weight:bold; font-size:1.2rem">presented by <?php echo $result['edu_name'] ?></div>  
+              <div style="color: #0277ff ;font-weight:bold; font-size:1.3rem"><?php echo $result['price'] ?><sup>SR</sup></div>
+              <span>On <?php echo $result['date'] ?></span>
+              <span>At <?php echo $result['time'] ?></span>
+              <p class="card-body"><?php echo $result['description'] ?></p>
+              <?php 
+              echo "<div class='btn btn-primary text-white btn-lg btn-block border-0 rounded-5' style='background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);'>
+              <a href='db_registerws.php?stu_id=".$_SESSION['college_id']."&edu_id=".$result['edu_id']."&workshopName=".$result['Workshop_name']."&stuName=".$_SESSION['name']."' class='text-white'>Register Now</a></div>";
+              ?> 
               </div>
+             
             </div>
-  
-            <div class="col-lg-4  ">
-              <div class="post-box box-shadow">
-                <div class="post-img"><img  src="Pictures/programming.jpg" class="img-fluid" alt="programming workshop"></div>             
-                <div style="color: #0277ff ;font-weight:bold; font-size:1.3rem">300<sup>SR</sup>
-                </div>
-                <span>Wed, November 30</span>
-                <p class="card-body">Learn about web development using languages such as HTML, JavaScript,and CSS plus and Python</p>
-                <button type="submit" type="button" class=" btn btn-primary btn-lg btn-block border-0 rounded-5" style=" background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);">Register Now</button>
-              </div>
-            </div>
-            <div class="col-lg-4 ">
-              <div class="post-box box-shadow">
-                <div class="post-img"><img  src="Pictures/ux_course.jpg" class="img-fluid" alt="ui/ux workshop"></div>             
-                <div style="color: #0277ff ;font-weight:bold; font-size:1.3rem">500<sup>SR</sup>
-                </div>
-                <span>Mon, November 26</span>
-                <p class="card-body">ui/ux course to provide you more abour how to design a user interface design for application and web development</p>
-                <button type="submit" type="button" class=" btn btn-primary btn-lg btn-block border-0 rounded-5" style=" background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);">Register Now</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+            <?php endwhile; ?>
+            <?php else: ?>
+                  <h3 class="text-center">No workshop is found</h3>
+            <?php endif; ?>
+            <?php mysqli_free_result($result1); ?>
+
+
+  </div>
+ </div>
+</section>
      <!-- ===================== Start of Workshop Section ===================== -->
   
      <?php include("footer.php");?>
@@ -96,8 +94,5 @@
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
 <!-- ========================== End of javaScript files  ========================== -->
-
-
 </body>
-
 </html>

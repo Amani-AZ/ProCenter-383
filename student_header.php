@@ -16,9 +16,15 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item " href="student_appointment.php">My Appointment</a></li>
                   <li><a class="dropdown-item " href="student_materials.php">My materials</a></li>
-                </ul>
+          </ul>
         </li>
-          <li class="nav-item "><a href="workshop.php" class="nav-link line  background fs-7">Workshop</a></li>
+        <li class="nav-item dropdown"><a href="request_workshop.php" class="nav-link line  background fs-7">Workshop<i class="bi bi-caret-down-fill drop_icon"></i></a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item " href="workshop.php">View workshops</a></li>
+                  <li><a class="dropdown-item " href="stu_workshop.php">My workshops</a></li>
+          </ul>
+        </li>
+          <!-- <li class="nav-item "><a href="workshop.php" class="nav-link line  background fs-7">Workshop</a></li> -->
           <li class="nav-item "><a href="contact.php" class="nav-link  line background fs-7">Contact</a></li>
           <li class="nav-item "><a href="about.php" class="nav-link  line background fs-7 ">About</a></li>
          

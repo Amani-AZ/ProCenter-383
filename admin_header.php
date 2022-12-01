@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse " id="btn">
         <ul class="navbar-nav ms-auto ">
           <li class="nav-item"><a href="admin_requests.php" class="nav-link line  background fs-7"> Volunteer requests</a></li>
-          <li class="nav-item "><a href="#" class="nav-link  line background fs-7">Workshop requests</a></li>
+          <li class="nav-item "><a href="admin_workshop.php" class="nav-link  line background fs-7">Workshop requests</a></li>
           <li class="nav-item "><a href="contact_admin.php" class="nav-link  line background fs-7">Contact Messages</a></li>
           <!-- <li class="nav-item "><a href="about.php" class="nav-link  line background fs-7 ">About</a></li> -->
         </ul>

@@ -83,17 +83,39 @@
       </div>
 
       <div class="col-lg-5 offset-lg-1 mt-4">
+      <?php 
+        include 'db_con.php';  
+        $query = "select * from requestws";  
+        mysqli_query($conn,$query); 
+        if(isset($_POST['submit']))
+        {
+            $edu_id=$_SESSION['college_id'];
+            $edu_name=$_SESSION['name'];
+            $Workshop_name=$_POST['title'];
+            $Date=$_POST['Date'];
+            $Time=$_POST['Time'];
+            $price=$_POST['price'];
+            $description=$_POST['description'];
+            $sql="insert into requestws(edu_id,edu_name,Workshop_name,date,time,price,description) values('$edu_id','$edu_name','$Workshop_name','$Date','$Time','$price','$description')";
+            if( mysqli_query($conn,$sql)){
+              echo "<script>alert('Your request has been sent.');</script>";
+            }
+            else
+            {
+              echo "<script>alert('Could not send the request!');</script>";
+            }
+            
+        }
+        ?>
         <div>
           <form method="post">
             <div class="row">
-              <div class="form-group col-lg-4 my-2">
-                <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" required>
+              <div class="form-group col-lg-6 my-2">
+                <input type="text"  class="form-control"  placeholder="<?php echo $_SESSION['name']?> "disabled>
               </div>
-              <div class="form-group col-lg-4 my-2">
-                <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" required>
-              </div>
-              <div class="form-group col-lg-4 my-2">
-                <input type="text" name="id" class="form-control" id="id" placeholder="ID" required>
+              <div class="form-group col-lg-6 my-2">
+                <input type="text"  class="form-control" id="id" placeholder=<?php echo $_SESSION['college_id']?> disabled>
+                
               </div>
               
             </div>
@@ -103,7 +125,7 @@
             <div class="row my-2">
                 <div class="col-md-4 my-3">
                     <label for="paid" class="form-label text-white">Payment method</label>
-                    <select id="paid" class="form-select">
+                    <select name="price" id="paid" class="form-select">
                         <option selected>Is it Paid?</option>
                         <optgroup label="Yes">
                             <option value="100">100 SR</option>
@@ -133,7 +155,7 @@
               <textarea class="form-control" name="description" rows="5" placeholder="short description of the workshop" required></textarea>
             </div>
             <div class="d-grid">
-              <button type="submit" type="button" class="btn btn-lg btn-block rounded-5 bg-light" style="color: #0277ff;">Send the request</button>
+              <button type="submit" type="button" class="btn btn-lg btn-block rounded-5 bg-light" name="submit" style="color: #0277ff;">Send the request</button>
             </div>
           </form>
         </div>

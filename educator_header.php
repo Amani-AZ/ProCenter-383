@@ -17,8 +17,8 @@
           <li class="nav-item dropdown"><a href="request_workshop.php" class="nav-link line  background fs-7">Workshop<i class="bi bi-caret-down-fill drop_icon"></i></a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item " href="request_workshop.php">Request workshop</a></li>
-                  <li><a class="dropdown-item " href="#">My workshop(later)</a></li>
-                </ul>
+                  <li><a class="dropdown-item " href="edu_workshop.php">My workshop</a></li>
+          </ul>
         </li>
           <li class="nav-item "><a href="contact.php" class="nav-link  line background fs-7">Contact</a></li>
           <li class="nav-item "><a href="about.php" class="nav-link  line background fs-7 ">About</a></li>
