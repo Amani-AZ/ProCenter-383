@@ -96,7 +96,7 @@
                                         <td>".$result['course']."</td>  
                                         <td>".$result['date']."</td>  
                                         <td>".$result['time']."</td> 
-                                        <td><a href='db_studelete.php?app_no=".$result['app_no']."' class='w3-button w3-teal w3-border-teal w3-round-xlarge'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
+                                        <td><a href='db_studelete.php?app_no=".$result['app_no']."&eduName=".$result['eduName']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' class='btn btn-primary rounded'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
                                         </tr>  
                                     ";  
                                     $t++;
@@ -104,7 +104,7 @@
                                 ?>
                                 <?php else: ?>
                                         <tr>
-                                        <td colspan="5" rowspan="1" headers="" class="w3-center">No Appointment is Found</td>
+                                        <td colspan="6" rowspan="1" headers="" class="text-center">No Appointment is Found</td>
                                         </tr>
                                 <?php endif; ?>
                                 <?php mysqli_free_result($result1); ?>
