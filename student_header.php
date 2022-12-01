@@ -1,5 +1,5 @@
 
-<header id="header">
+<header id="header" >
     <nav id="navbar" class="navbar navbar-expand-md background  ">
         <a href="#" class="navbar-brand  "><img src="Pictures\Logo-clear.png" alt="ProCenter logo" style="height: 80px;" class="img-fluid" ></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#btn"><i class='bx bx-menu'></i></button>
@@ -23,21 +23,11 @@
           <li class="nav-item "><a href="about.php" class="nav-link  line background fs-7 ">About</a></li>
          
         </ul>
-         <!-- add class btn-change  -->
-
-         <!-- قبل التعديل -->
-         <!-- <form action="logout.php" method="get">
-        <div class="mb-2 for"> <button type="button" class="btn mx-4 px-5 " style="border-style: solid;
-        border-color: #0278ff;"><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</button></div> -->
-
-        <!-- بعد التعديل -->
-        <div>
-        <a href="logout.php?logout" class="btn mx-4 px-5"><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</a>
+        
+        <div class="for">
+        <a href="logout.php?logout" class="btn mx-4 px-5" ><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</a>
         </div>
-<!-- 
-        <div class="mb-2 for"> <button type="button" class="btn mx-4 px-5 " style="border-style: solid;
-        border-color: #0278ff;"><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</button></div> -->
-    </form>
+
       </div>
     </nav>
 </header>

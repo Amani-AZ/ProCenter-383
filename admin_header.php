@@ -11,13 +11,9 @@
           <li class="nav-item "><a href="contact_admin.php" class="nav-link  line background fs-7">Contact Messages</a></li>
           <!-- <li class="nav-item "><a href="about.php" class="nav-link  line background fs-7 ">About</a></li> -->
         </ul>
-         <!-- add class btn-change  -->
-        <div class="my-2 for mx-5"> 
-          <button type="button" class="btn mx-3 px-5" style="border-style: solid;border-color: #0278ff;">
-            <a href="logout.php" class="nav-link "><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</a>
-          </button>
+        <div class="for">
+        <a href="logout.php?logout" class="btn mx-4 px-5" ><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</a>
         </div>
-
         
       </div>
     </nav>

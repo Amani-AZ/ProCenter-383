@@ -24,11 +24,10 @@
           <li class="nav-item "><a href="about.php" class="nav-link  line background fs-7 ">About</a></li>
          
         </ul>
-         <!-- add class btn-change  -->
-      <div class="logout">
-    <a href="logout.php?logout" class="my-2 for mx-5" >
-      <i class="bi bi-box-arrow-in-right margin-home " ></i>Log out</a>
-</div>
+        <div class="for">
+        <a href="logout.php?logout" class="btn mx-4 px-5" ><i class="bi bi-box-arrow-in-right margin-home"></i>Log out</a>
+        </div>
+
       </div>
     </nav>
 </header>
