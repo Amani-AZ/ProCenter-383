@@ -183,7 +183,7 @@
                                                 <td>".$result['course']."</td>  
                                                 <td>".$result['date']."</td>  
                                                 <td>".$result['time']."</td> 
-                                                <td><a href='db_delete.php?id=".$result['id']."' class='btn btn-lg btn-primary rounded-5  del'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
+                                                <td><a href='db_delete.php?id=".$result['id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' class='btn btn-primary rounded'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
                                                 </tr>  
                                             ";  
                                         }  

@@ -88,7 +88,7 @@
                                 <?php endwhile; ?>
                                 <?php else: ?>
                                 <tr>
-                                <td colspan="4" rowspan="1" headers="" class="text-center">No Appointment is Found</td>
+                                <td colspan="5" rowspan="1" headers="" class="text-center">No Appointment is Found</td>
                                 </tr>
                                 <?php endif; ?>
                                 <?php mysqli_free_result($result); ?>
