@@ -8,24 +8,26 @@
       $time = $_GET['time'];  
       $query = "delete from StuSession  WHERE app_no = '$appNum'"; 
       $run = mysqli_query($conn,$query);
+      
       if ($run) {  
-         header('location:student_appointment.php'); 
-          $to = "3910863@stu.rcyci.edu.sa";
-          $subject = 'Subject to Here';
-          $content = "Your appointment is canceled!.\n\nAppointment Details: \n\nEducator Name: ".$name."\nCourse: ".$coures."\nDate: ".$date. "\nTime: ".$time;
+         //header('location:student_appointment.php'); 
+          $to = "3910191@stu.rcyci.edu.sa";
+          $subject = 'Canceled Appointment';
+          $content = "Your appointment is canceled !\n\nAppointment Details: \n\nEducator Name: ".$name."\nCourse: ".$coures."\nDate: ".$date. "\nTime: ".$time;
           $headers = "From: Your-Email\r\n";
           //*** Show the result... ***
           if (mail($to, $subject, $content, $headers))
           {
-               echo "<script> 
-			          window.alert('Your appointment is canceled!');
-			          window.location.href='student_appointment.php'; 
-		          </script>";
+               echo "
+               <script> 
+                  window.alert('Your appointment is canceled!');
+                  window.location.href='student_appointment.php'; 
+               </script>";
           } 
           else 
           {
                echo "<script> 
-                          window.alert('ERROR');
+                          alert('ERROR');
                           window.location.href='student_appointment.php'; 
                     </script>";
           } 

@@ -27,6 +27,7 @@
           <!-- <li class="nav-item "><a href="workshop.php" class="nav-link line  background fs-7">Workshop</a></li> -->
           <li class="nav-item "><a href="contact.php" class="nav-link  line background fs-7">Contact</a></li>
           <li class="nav-item "><a href="about.php" class="nav-link  line background fs-7 ">About</a></li>
+          <li class="nav-item "><a href="ChatApp\login.php" class="nav-link  line background fs-7 ">Live Chat</a></li>
          
         </ul>
         
