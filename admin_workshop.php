@@ -66,7 +66,7 @@
                                     <th>workshop title</th>
                                     <th>date</th>
                                     <th>time</th>
-                                    <th>Price</th>
+                                    <!-- <th>Price</th> -->
                                     <th>short desciption</th>
                                     <th>Status</th>
                                     <th>Action</th>
@@ -88,7 +88,7 @@
             $title = $row['Workshop_name'];
             $date = $row['date'];
             $time = $row['time'];
-            $price = $row['price'];
+            // $price = $row['price'];
             $description = $row['description'];
             $status = $row['STATUS'];
             echo "<td>".$i."</td>";
@@ -97,7 +97,7 @@
             echo "<td>{$title}</td>";
             echo "<td>{$date}</td>";
             echo "<td>{$time}</td>";
-            echo "<td>{$price}</td>";
+            // echo "<td>{$price}</td>";
             echo "<td>{$description}</td>";
             if ($status==1){
               echo "<td>Approved</td>";
@@ -105,8 +105,8 @@
             else{
               echo "<td>Disapproved</td>";
             }  
-            echo "<td><button  class='btn btn-light btn-outline-primary' style='font-size:2rem' type='submit' name='eAcc' value='{$edu_id}'>Accept</button><br>";
-            echo "<button class='btn btn-light btn-outline-primary  ' style='font-size:2rem' type='submit' name='eRej' value='{$edu_id}'>Reject</button></td>";
+            echo "<td><button  class='btn btn-light btn-outline-primary' style='font-size:2rem' type='submit' name='eAcc' value='{$edu_id}'>Approved</button><br>";
+            echo "<button class='btn btn-light btn-outline-primary  ' style='font-size:2rem' type='submit' name='eRej' value='{$edu_id}'>Disapporved</button></td>";
 
             echo "</tr>";
 

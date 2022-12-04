@@ -64,7 +64,7 @@
                                     <th>workshop title</th>
                                     <th>date</th>
                                     <th>time</th>
-                                    <th>Price</th>
+                                    <!-- <th>Price</th> -->
                                     <th>short desciption</th>
                                     <th>Status</th>
                                 </tr>
@@ -90,13 +90,13 @@
                 echo "<td>{$title}</td>";
                 echo "<td>{$date}</td>";
                 echo "<td>{$time}</td>";
-                echo "<td>{$price}</td>";
+                // echo "<td>{$price}</td>";
                 echo "<td>{$description}</td>";
                 if ($status==1){
                 echo "<td>Approved</td>";
                 }
                 else{
-                echo "<td>DisApproved</td>";
+                echo "<td>Disapproved</td>";
                 }  
                 echo "</tr>";
                 $i++;

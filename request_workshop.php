@@ -94,9 +94,9 @@
             $Workshop_name=$_POST['title'];
             $Date=$_POST['Date'];
             $Time=$_POST['Time'];
-            $price=$_POST['price'];
+            // $price=$_POST['price'];
             $description=$_POST['description'];
-            $sql="insert into requestws(edu_id,edu_name,Workshop_name,date,time,price,description) values('$edu_id','$edu_name','$Workshop_name','$Date','$Time','$price','$description')";
+            $sql="insert into requestws(edu_id,edu_name,Workshop_name,date,time,description) values('$edu_id','$edu_name','$Workshop_name','$Date','$Time','$description')";
             if( mysqli_query($conn,$sql)){
               echo "<script>alert('Your request has been sent.');</script>";
             }
@@ -123,7 +123,7 @@
               <input type="text" class="form-control" name="title" id="title" placeholder="workshop title" required>
             </div>
             <div class="row my-2">
-                <div class="col-md-4 my-3">
+                <!-- <div class="col-md-4 my-3">
                     <label for="paid" class="form-label text-white">Payment method</label>
                     <select name="price" id="paid" class="form-select">
                         <option selected>Is it Paid?</option>
@@ -138,14 +138,14 @@
                             <option value="Free">0 SR</option>
                         </optgroup>
                     </select>
-                </div>
+                </div> -->
 
-                <div class="form-group  col-md-4 my-3">
+                <div class="form-group  col-md-6 my-3">
                     <label for="time" class="form-label text-white">Workshop time</label>
                     <input type="time" class="form-control" name="Time" id="Times" placeholder="Time" required>
                 </div>
 
-                <div class="form-group  col-md-4 my-3">
+                <div class="form-group  col-md-6 my-3">
                     <label for="Date" class="form-label text-white">Workshop Date</label>
                     <input type="Date" class="form-control" name="Date" id="Date" placeholder="Date" required>
                 </div>

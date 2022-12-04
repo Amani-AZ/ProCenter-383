@@ -62,10 +62,12 @@
               <div class="card  post-box box-shadow "style='border-color: #FF3CAC;'>
               <div class="text-center" ><h3 style="color: #784BA0 ;font-weight:bold;"><?php echo $result['Workshop_name'] ?><h3></div>
               <div  style="color: #FF3CAC ;font-weight:bold; font-size:1.2rem">presented by <?php echo $result['edu_name'] ?></div>  
-              <div style="color: #0277ff ;font-weight:bold; font-size:1.3rem"><?php echo $result['price'] ?><sup>SR</sup></div>
-              <span>On <?php echo $result['date'] ?></span>
-              <span>At <?php echo $result['time'] ?></span>
-              <p class="card-body"><?php echo $result['description'] ?></p>
+              <!-- <div style="color: #0277ff ;font-weight:bold; font-size:1.3rem"> -->
+              <?php //echo $result['price'] ?>
+              <!-- <sup>SR</sup></div> -->
+              <span style="color: #0277ff ;font-weight:bold; font-size:1rem">On <?php echo $result['date'] ?></span>
+              <span style="color: #0277ff ;font-weight:bold; font-size:1rem">At <?php echo $result['time'] ?></span>
+              <p class="card-body "><?php echo $result['description'] ?></p>
               <?php 
               echo "<div class='btn btn-primary text-white btn-lg btn-block border-0 rounded-5' style='background-color: #FF3CAC;background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 30%, #0277ff 100%);'>
               <a href='db_registerws.php?stu_id=".$_SESSION['college_id']."&edu_id=".$result['edu_id']."&workshopName=".$result['Workshop_name']."&stuName=".$_SESSION['name']."' class='text-white'>Register Now</a></div>";
