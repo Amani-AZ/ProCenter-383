@@ -10,13 +10,25 @@
 
       $run = mysqli_query($conn,$query);
       if ($run) {  
-         header('location:student_appointment.php'); 
+         //header('location:student_appointment.php'); 
           $to = "3910863@stu.rcyci.edu.sa";
           $subject = 'Canceled Appointment';
-          $content = "Your appointment is canceled!!\n\nAppointment Details:\n\nEducator Name: ".$name." \nCourse: ".$Coures."\n\nDate: ".$Date. "\nTime: ".$Time;
-          $headers = "From: Your-Email\r\n";
-          //*** Show the result... ***
-          if (mail($to, $subject, $content, $headers))
+          //$content = "Your appointment is canceled!!\n\nAppointment Details:\n\nEducator Name: ".$name." \nCourse: ".$Coures."\n\nDate: ".$Date. "\nTime: ".$Time;
+          $headers = array(
+               "MIME-Version" => "1.0", 
+               "Content-Type" =>"text/html;charset=UTF-8",
+               "From" =>"arwa.tammar@gmail.com",
+               "Reply-To" =>"arwa.tammar@gmail.com"
+          );
+
+          //*** Show the result... ***//
+
+          ob_start();
+          include("mail_studelete_template.php");
+          $message = ob_get_contents();
+          ob_get_clean();
+
+          if (mail($to, $subject, $message, $headers))
           {
                echo "<script> 
 			          window.alert('Your appointment is canceled!');

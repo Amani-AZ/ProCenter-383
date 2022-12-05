@@ -66,7 +66,7 @@
                                     <th>Course</th>
                                     <th> Date</th>
                                     <th> Time</th>
-                                    <!-- <th>Cancel</th> -->
+                                    <th>Cancel</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,6 +84,7 @@
                                 <td><?php echo $array[3];?></td>
                                 <td><?php echo $array[4];?></td>
                                 <td><?php echo $array[5];?></td>
+                                <td><a class='btn delete btn-primary rounded'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
                                 </tr>
                                 <?php endwhile; ?>
                                 <?php else: ?>

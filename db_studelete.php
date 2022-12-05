@@ -11,18 +11,29 @@
       
       if ($run) {  
          //header('location:student_appointment.php'); 
-          $to = "3910863@stu.rcyci.edu.sa";
+          $to = "3910191@stu.rcyci.edu.sa";
           $subject = 'Canceled Appointment';
-          $content = "Your appointment is canceled !\n\nAppointment Details: \n\nEducator Name: ".$name."\nCourse: ".$coures."\nDate: ".$date. "\nTime: ".$time;
-          $headers = "From: Your-Email\r\n";
-          //*** Show the result... ***
-          if (mail($to, $subject, $content, $headers))
+          // $content = "Your appointment is canceled !\n\nAppointment Details: \n\nEducator Name: ".$name."\nCourse: ".$coures."\nDate: ".$date. "\nTime: ".$time;
+          $headers = array(
+               "MIME-Version" => "1.0", 
+               "Content-Type" =>"text/html;charset=UTF-8",
+               "From" =>"arwa.tammar@gmail.com",
+               "Reply-To" =>"arwa.tammar@gmail.com"
+          );
+
+          //*** Show the result... ***//
+
+          ob_start();
+          include("mail_edudelete_template.php");
+          $message = ob_get_contents();
+          ob_get_clean();
+
+          if (mail($to, $subject, $message, $headers))
           {
-               echo "
-               <script> 
-                  window.alert('Your appointment is canceled!');
-                  window.location.href='student_appointment.php'; 
-               </script>";
+               echo "<script> 
+                              alert('Your appointment is canceled!');
+                              window.location.href='student_appointment.php'; 
+                    </script>";
           } 
           else 
           {
