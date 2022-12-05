@@ -3,9 +3,9 @@
  if (isset($_POST['id'])) {  
       $id = $_POST['id'];
       $name = $_POST['edu_name'];
-      $Coures = $_POST['course'];
-      $Date = $_POST['date'];
-      $Time = $_POST['time'];  
+      $coures = $_POST['course'];
+      $date = $_POST['date'];
+      $time = $_POST['time'];  
       $query = "DELETE FROM `eduschedule` WHERE id = '$id'"; 
 
       $run = mysqli_query($conn,$query);

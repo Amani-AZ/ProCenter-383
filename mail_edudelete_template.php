@@ -90,7 +90,7 @@
 			<tr>
 				<td><?php echo $name ?></td>
 				<td><?php echo $coures ?></td>
-				<td><?php echo $Date ?></td>
+				<td><?php echo $date ?></td>
 				<td><?php echo $time ?></td>
 			</tr>
 		</table>

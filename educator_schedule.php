@@ -209,7 +209,7 @@
       var parent = $(this).parent().parent();
       $.ajax({
               type:"POST",
-              url:"db_delete.php?id="+del_id,
+              url:"db_delete.php",
               data:{"id":del_id,"edu_name":edu_name,"course":course,"date":date,"time":time},
               success:function(data) {
                   if(data) { // Sucess
