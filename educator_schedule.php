@@ -137,7 +137,7 @@
                                 ?>
                                 <!-- <div class="container  table-responsive "> -->
                                 <!-- <hr class="text-white"> -->
-                                <form method="GET" action="">
+                                <form method="post" action="">
                                     <td>
                                         <div >
                                             <input class="form-control"  name="course" type="text" placeholder="Course Name" required>
@@ -208,12 +208,12 @@
 
       var parent = $(this).parent().parent();
       $.ajax({
-              type:"GET",
+              type:"POST",
               url:"db_delete.php?id="+del_id,
               data:{"id":del_id,"edu_name":edu_name,"course":course,"date":date,"time":time},
               success:function(data) {
                   if(data) { // Sucess
-                    parent.slideUp(100,function() {
+                    parent.slideUp("fast",function() {
                     parent.remove();}); 
                   } 
                   else { // Error 

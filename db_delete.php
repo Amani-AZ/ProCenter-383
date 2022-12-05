@@ -1,11 +1,11 @@
 <?php
  include 'db_con.php';  
- if (isset($_GET['id'])) {  
-      $id = $_GET['id'];
-      $name = $_GET['edu_name'];
-      $Coures = $_GET['course'];
-      $Date = $_GET['date'];
-      $Time = $_GET['time'];  
+ if (isset($_POST['id'])) {  
+      $id = $_POST['id'];
+      $name = $_POST['edu_name'];
+      $Coures = $_POST['course'];
+      $Date = $_POST['date'];
+      $Time = $_POST['time'];  
       $query = "DELETE FROM `eduschedule` WHERE id = '$id'"; 
 
       $run = mysqli_query($conn,$query);
