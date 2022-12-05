@@ -9,7 +9,7 @@
       $query = "insert into StuSession(stuid,eduName,course,date,time) values('$id','$name','$course','$date','$time')"; 
       $run = mysqli_query($conn,$query);  
       if ($run) { 
-         $to = "3910191@stu.rcyci.edu.sa";
+         $to = "3910863@stu.rcyci.edu.sa";
          $subject = 'Booked Appointment';
          $content = "New Appoitnment is added!\n\nAppointment Details: \n\nEducator Name: ".$name."\nCourse: ".$course."\nDate: ".$date. "\nTime: ".$time;
          $headers = "From: Your-Email\r\n";

@@ -137,7 +137,7 @@
                                 ?>
                                 <!-- <div class="container  table-responsive "> -->
                                 <!-- <hr class="text-white"> -->
-                                <form method="post" action="">
+                                <form method="GET" action="">
                                     <td>
                                         <div >
                                             <input class="form-control"  name="course" type="text" placeholder="Course Name" required>
@@ -155,23 +155,14 @@
                                     </td>                                    
                                     <td>
                                         <div >
-                                            <!-- <ul class="action-list"> -->
-                                                <!-- <li><a href="#" data-tip="add"><i class="fa-sharp fa-solid fa-plus" style="padding-left:80px;"></i></a></li>
-                                                <li><a href="#" data-tip="add"><i class="fa-sharp fa-solid fa-plus" style="padding-left:80px;"></i></a></li>
-                                                <td><button type="submit"  name="submit" class="w3-teal w3-border-teal w3-round-xlarge w3-padding" >
-                                                <i class="fa fa-plus  Edit-out-logo-size add" ></i> Add new Appointment </button>
-                                                </td> -->
-                                                <!-- <td> --> 
+
                                                     <button type="submit"  name="submit" class="btn btn-lg btn-primary p-3 rounded-5" >
                                                         <i class="fa-sharp fa-solid fa-plus" ></i> Add new Appointment
                                                     </button>
-                                                <!-- </td> -->
-                                            <!-- </ul> -->
+
                                         </div>
                                     </td>
                                 </form>   
-                                
-                                <!-- </div>                 -->
                                 </tr>
                             
                                 <?php   
@@ -180,10 +171,11 @@
                                         while ($result = mysqli_fetch_assoc($run)) {  
                                             echo "  
                                                 <tr class='data '>   
-                                                <td>".$result['course']."</td>  
-                                                <td>".$result['date']."</td>  
-                                                <td>".$result['time']."</td> 
-                                                <td><a href='db_delete.php?id=".$result['id']."&edu_name=".$result['edu_name']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' class='btn btn-primary rounded'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
+                                                <td hidden id='edu_name'>".$result['edu_name']."</td>  
+                                                <td id='course'>".$result['course']."</td>  
+                                                <td id='date'>".$result['date']."</td>  
+                                                <td id='time'>".$result['time']."</td> 
+                                                <td><a  data-id=\"".$result['id']."\" class='btn delete btn-primary rounded'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
                                                 </tr>  
                                             ";  
                                         }  
@@ -204,7 +196,33 @@
 
 <!-- ---------------------------------------------- End of Educator Schedule part------------------------------------------------------ -->
 
+<script>
+  // for deleting new appointment
+    $(document).ready(function(){
+    $(".delete").click(function(){
+      var del_id = $(this).data('id');
+      var course=document.getElementById('course').innerHTML;
+      var edu_name=document.getElementById('edu_name').innerHTML;
+      var date=document.getElementById('date').innerHTML;
+      var time=document.getElementById('time').innerHTML;
 
+      var parent = $(this).parent().parent();
+      $.ajax({
+              type:"GET",
+              url:"db_delete.php?id="+del_id,
+              data:{"id":del_id,"edu_name":edu_name,"course":course,"date":date,"time":time},
+              success:function(data) {
+                  if(data) { // Sucess
+                    parent.slideUp(100,function() {
+                    parent.remove();}); 
+                  } 
+                  else { // Error 
+                  }
+              }
+            });
+            });
+        });
+</script>
 
 <!--  ------------------------------------------------ footer part------------------------------------------------------ -->
 <?php include("footer.php");?>

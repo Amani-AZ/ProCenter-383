@@ -92,11 +92,11 @@
                                     echo "  
                                         <tr class='data'>  
                                         <td>".$t."</td>  
-                                        <td>".$result['eduName']."</td> 
-                                        <td>".$result['course']."</td>  
-                                        <td>".$result['date']."</td>  
-                                        <td>".$result['time']."</td> 
-                                        <td><a href='db_studelete.php?app_no=".$result['app_no']."&eduName=".$result['eduName']."&course=".$result['course']."&date=".$result['date']."&time=".$result['time']."' class='btn btn-primary rounded'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
+                                        <td id='eduName'>".$result['eduName']."</td> 
+                                        <td id='course'>".$result['course']."</td>  
+                                        <td id='date'>".$result['date']."</td>  
+                                        <td id='time'>".$result['time']."</td> 
+                                        <td><a  data-id=\"".$result['app_no']."\"class='btn delete btn-primary rounded'><i class='fa fa-close  Edit-out-logo-size' ></i> Cancel</a></td> 
                                         </tr>  
                                     ";  
                                     $t++;
@@ -117,6 +117,34 @@
             </div>
         </div>
     </div>
+    
+ <script>
+  // for deleting new appointment
+    $(document).ready(function(){
+    $(".delete").click(function(){
+      var del_id = $(this).data('id');
+      var edu=document.getElementById('eduName').innerHTML;
+      var course=document.getElementById('course').innerHTML;
+      var date=document.getElementById('date').innerHTML;
+      var time=document.getElementById('time').innerHTML;
+
+      var parent = $(this).parent().parent();
+      $.ajax({
+              type:"GET",
+              url:"db_studelete.php?app_no="+del_id,
+              data:{"stuid":del_id,"eduName":edu,"course":course,"date":date,"time":time},
+              success:function(data) {
+                  if(data) { // Sucess
+                    parent.slideUp("fast",function() {
+                    parent.remove();}); 
+                  } 
+                  else { // Error 
+                  }
+              }
+            });
+            });
+        });
+</script>
     <?php include("footer.php");?>
     </body>
 </html>
