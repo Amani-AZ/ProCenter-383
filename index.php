@@ -104,45 +104,36 @@
     </section>
 
 
-<section id="slider" class="pt-5">
+<section id="slider" class="pt-5" >
   <div class="container">
    <div class="icon-boxes"><h5 class="text-center "><b>ProCenter Educators</b></h5></div> 
-      <div class="slider">
-                <div class="owl-carousel">
-                    <div class="slider-card">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/slide-1.jpg" alt="" >
-                        </div>
-                        <h5 class="mb-0 text-center "><b>Dr. Kajal Khan</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
+      <div class="slider text-uppercase " >
+                <div class="owl-carousel"  >
+                  
+                    <div class="slider-card " >
+                        
+                        <h5 class="mb-0 text-center py-5 "><b>Dr. Kajal Khan</b></h5>
+                       
                     </div>
                     <div class="slider-card">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/slide-2.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>Dr. Manal Aburizaiza</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
+                        
+                        <h5 class="mb-0 text-center py-5"><b>Dr. Manal Aburizaiza</b></h5>
+                        
                     </div>
                     <div class="slider-card">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/slide-3.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>Ms. Aizal Idris</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
+                       
+                        <h5 class="mb-0 text-center py-5"><b>Ms. Aizal Idris</b></h5>
+                       
                     </div>
                     <div class="slider-card">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/slide-4.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>Ms. Omamah Hawsawi</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
+                        
+                        <h5 class="mb-0 text-center py-5"><b>Ms. Omamah Hawsawi</b></h5>
+                       
                     </div>
                     <div class="slider-card">
-                        <div class="d-flex justify-content-center align-items-center mb-4">
-                            <img src="images/slide-5.jpg" alt="">
-                        </div>
-                        <h5 class="mb-0 text-center"><b>Ms. Wafa Alraddadi</b></h5>
-                        <p class="text-center p-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam temporibus quidem magni qui doloribus quasi natus inventore nisi velit minima.</p>
+                       
+                        <h5 class="mb-0 text-center py-5"><b>Ms. Wafa Alraddadi</b></h5>
+                        
                     </div>
                 </div>
             </div>
